@@ -107,35 +107,59 @@ export function HeroSection() {
           </div>
 
           {/* Visual */}
-          <div className="relative">
-            <div className="relative z-10">
+          <div className="relative lg:pl-8">
+            {/* Main Image Container */}
+            <div className="relative z-10 mx-auto max-w-sm lg:max-w-md">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1681826291722-70bd7e9e6fc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBiYW5raW5nJTIwYXBwfGVufDF8fHx8MTc1NTQwMDEyMHww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Mobile Banking App"
-                className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
+                className="rounded-2xl shadow-2xl w-full"
               />
             </div>
             
-            {/* Floating Cards */}
-            <Card className="absolute top-4 -left-4 p-4 shadow-lg bg-white/90 backdrop-blur">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <div>
-                  <div className="text-sm font-semibold">Daily Savings</div>
+            {/* Floating Cards - Better positioned to avoid overlap */}
+            <Card className="absolute top-8 left-0 lg:left-4 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[140px] hidden sm:block">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                <div className="min-w-0">
+                  <div className="text-xs font-semibold text-gray-900 truncate">Daily Savings</div>
                   <div className="text-xs text-gray-600">₹25 saved today</div>
                 </div>
               </div>
             </Card>
             
-            <Card className="absolute bottom-8 -right-4 p-4 shadow-lg bg-white/90 backdrop-blur">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <div>
-                  <div className="text-sm font-semibold">Loan Payment</div>
+            <Card className="absolute bottom-12 right-0 lg:right-4 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[140px] hidden sm:block">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+                <div className="min-w-0">
+                  <div className="text-xs font-semibold text-gray-900 truncate">Loan Payment</div>
                   <div className="text-xs text-gray-600">₹100 repaid</div>
                 </div>
               </div>
             </Card>
+
+            {/* Mobile-only cards positioned below image */}
+            <div className="flex justify-between gap-4 mt-6 sm:hidden">
+              <Card className="p-3 shadow-lg bg-white/95 backdrop-blur flex-1">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-semibold text-gray-900">Daily Savings</div>
+                    <div className="text-xs text-gray-600">₹25 saved today</div>
+                  </div>
+                </div>
+              </Card>
+              
+              <Card className="p-3 shadow-lg bg-white/95 backdrop-blur flex-1">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-semibold text-gray-900">Loan Payment</div>
+                    <div className="text-xs text-gray-600">₹100 repaid</div>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
