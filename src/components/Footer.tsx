@@ -1,5 +1,6 @@
 import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
+import kaniroLogo from "figma:asset/59a4e87f6f8559c1e33304344c14ed5d1faafe70.png";
 
 export function Footer() {
   return (
@@ -8,11 +9,12 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-green-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
-              </div>
-              <span className="text-xl font-bold text-white">Kaniro</span>
+            <div className="flex items-center">
+              <img 
+                src={kaniroLogo}
+                alt="Kaniro Financial Services"
+                className="h-10 w-auto object-contain filter brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm">
               Empowering financial inclusion through accessible micro-deposits and flexible loan repayments for Tier 2/3 India.

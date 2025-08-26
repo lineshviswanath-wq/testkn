@@ -23,7 +23,7 @@ export function Header() {
     }
   }, [showMobileMenu]);
 
-  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'goals') => {
+  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'goals' | 'blog') => {
     if (view === 'home') {
       setNavigation({ currentView: view });
       // If we're on home page, scroll to top
@@ -80,7 +80,7 @@ export function Header() {
             onClick={() => handleNavClick('goals')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            Kaniro Goals
+            Kaniro Dabba
           </button>
 
           <button 
@@ -88,6 +88,13 @@ export function Header() {
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
             Kaniro Design Studio
+          </button>
+
+          <button 
+            onClick={() => handleNavClick('blog')}
+            className="text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            Blog
           </button>
 
           <button 
@@ -145,7 +152,7 @@ export function Header() {
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              Kaniro Goals
+              Kaniro Dabba
             </button>
 
             <button 
@@ -156,6 +163,16 @@ export function Header() {
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
               Kaniro Design Studio
+            </button>
+
+            <button 
+              onClick={() => {
+                handleNavClick('blog');
+                setShowMobileMenu(false);
+              }}
+              className="block text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              Blog
             </button>
 
             <button 

@@ -92,9 +92,9 @@ export function HeroSection() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full shadow-lg">
                   <Target className="size-4" />
-                  Kaniro Goals - Micro Save & Repay Platform
+                  <span className="font-medium">Kaniro Dabba - Micro Deposit & Repay Platform</span>
                 </div>
               </motion.div>
               
@@ -297,8 +297,8 @@ export function HeroSection() {
                     }}
                   />
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900 truncate">Daily Savings</div>
-                    <div className="text-xs text-gray-600">₹25 saved today</div>
+                    <div className="text-xs font-semibold text-gray-900 truncate">Daily Dubba Deposit</div>
+                    <div className="text-xs text-gray-600">Starts from ₹10</div>
                   </div>
                 </div>
               </Card>
@@ -324,8 +324,8 @@ export function HeroSection() {
                     }}
                   />
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900 truncate">Loan Payment</div>
-                    <div className="text-xs text-gray-600">₹100 repaid</div>
+                    <div className="text-xs font-semibold text-gray-900 truncate">NPA Loan Payment</div>
+                    <div className="text-xs text-gray-600">Starts from ₹100</div>
                   </div>
                 </div>
               </Card>
@@ -337,8 +337,8 @@ export function HeroSection() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900">Daily Savings</div>
-                    <div className="text-xs text-gray-600">₹25 saved today</div>
+                    <div className="text-xs font-semibold text-gray-900">Daily Dubba Deposit</div>
+                    <div className="text-xs text-gray-600">Starts from ₹10</div>
                   </div>
                 </div>
               </Card>
@@ -347,8 +347,8 @@ export function HeroSection() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900">Loan Payment</div>
-                    <div className="text-xs text-gray-600">₹100 repaid</div>
+                    <div className="text-xs font-semibold text-gray-900">NPA Loan Payment</div>
+                    <div className="text-xs text-gray-600">Starts from ₹100</div>
                   </div>
                 </div>
               </Card>
