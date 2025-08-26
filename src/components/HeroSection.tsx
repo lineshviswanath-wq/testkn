@@ -94,7 +94,7 @@ export function HeroSection() {
               >
                 <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
                   <Target className="size-4" />
-                  Financial Inclusion Platform
+                  Kaniro Goals - Micro Save & Repay Platform
                 </div>
               </motion.div>
               

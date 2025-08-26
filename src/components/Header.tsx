@@ -29,8 +29,9 @@ export function Header() {
       // If we're on home page, scroll to top
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
     } else if (view === 'goals') {
-      // Navigate to home and scroll to relevant sections or show about page
-      setNavigation({ currentView: 'about' });
+      // Navigate to home page
+      setNavigation({ currentView: 'home' });
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
     } else if (view === 'deposits' && navigation.currentView === 'home') {
       // If on home page, scroll to deposits section
       scrollToSection('deposits');
