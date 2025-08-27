@@ -80,14 +80,14 @@ export function Header() {
             onClick={() => handleNavClick('dabba')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            Kaniro Dabba
+            DigiDabba
           </button>
 
           <button 
             onClick={() => handleNavClick('kancx')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            Kaniro Design Studio
+            KanCX
           </button>
 
           <button 
@@ -152,7 +152,7 @@ export function Header() {
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              Kaniro Dabba
+              DigiDabba
             </button>
 
             <button 
@@ -162,7 +162,7 @@ export function Header() {
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              Kaniro Design Studio
+              KanCX
             </button>
 
             <button 

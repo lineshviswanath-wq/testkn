@@ -201,7 +201,7 @@ export function DemoModal() {
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900">Kaniro's Solution</h4>
+              <h4 className="font-semibold text-gray-900">DigiDabba's Solution</h4>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-green-600">
                   <CheckCircle2 className="w-4 h-4" />
@@ -235,7 +235,7 @@ export function DemoModal() {
                 </div>
               </div>
               <div className="bg-white p-4 rounded-lg">
-                <h5 className="font-semibold mb-2">Kaniro Way</h5>
+                <h5 className="font-semibold mb-2">DigiDabba Way</h5>
                 <div className="text-sm space-y-1">
                   <div>Daily Payment: <span className="font-bold text-green-600">₹35-50</span></div>
                   <div>Frequency: <span className="text-green-600">Flexible</span></div>
@@ -255,7 +255,7 @@ export function DemoModal() {
         <div className="space-y-6">
           <div className="text-center">
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Kaniro operates as a digital marketplace, connecting customers with trusted banks and NBFCs. 
+              DigiDabba operates as a digital marketplace, connecting customers with trusted banks and NBFCs. 
               Your money remains safe with partner institutions while we provide the seamless digital experience.
             </p>
           </div>
@@ -293,7 +293,7 @@ export function DemoModal() {
                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-white font-bold text-sm">1</span>
                 </div>
-                <div className="text-sm">You use Kaniro app</div>
+                <div className="text-sm">You use DigiDabba app</div>
               </div>
               <ArrowRight className="w-6 h-6 text-gray-400" />
               <div className="text-center flex-1">
@@ -423,7 +423,7 @@ export function DemoModal() {
         <div className="bg-gradient-to-r from-blue-600 to-green-600 p-6 text-white">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold">Kaniro Demo</h2>
+              <h2 className="text-2xl font-bold">DigiDabba Demo</h2>
               <p className="text-blue-100">Micro Deposits & NPA Repayments</p>
             </div>
             <div className="flex items-center gap-4">

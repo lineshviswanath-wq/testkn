@@ -253,7 +253,7 @@ export function NPARepaymentSection() {
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-green-50 border-0 max-w-3xl mx-auto">
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-gray-900">
-                  Why Choose Kaniro for NPA Repayments?
+                  Why Choose DigiDabba for NPA Repayments?
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div>

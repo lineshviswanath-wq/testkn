@@ -291,7 +291,7 @@ export function AboutSection() {
                 viewport={{ once: true }}
               >
                 <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                  Kaniro Dabba Platform
+                  DigiDabba Platform
                 </span>
               </motion.h2>
               <motion.p 

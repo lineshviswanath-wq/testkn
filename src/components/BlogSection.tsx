@@ -334,7 +334,7 @@ export function BlogSection() {
               >
                 <BookOpen className="size-4" />
               </motion.div>
-              Kaniro Blog & Insights
+              DigiDabba Blog & Insights
             </motion.div>
             
             <motion.h1 

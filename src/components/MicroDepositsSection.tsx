@@ -156,7 +156,7 @@ export function MicroDepositsSection() {
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
                     onClick={() => handleStartRD(offer.bankName)}
                   >
-                    Start RD
+                    Start DigiDabba
                   </Button>
                   <Button 
                     variant="outline" 

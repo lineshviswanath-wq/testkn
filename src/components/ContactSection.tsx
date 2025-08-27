@@ -208,11 +208,11 @@ const socialLinks = [
 
 const faqs = [
   {
-    question: "How quickly can I get started with Kaniro Dabba?",
+    question: "How quickly can I get started with DigiDabba?",
     answer: "You can start immediately after completing our simple 5-minute onboarding process. Our team provides personalized guidance to help you choose the right savings or repayment plan."
   },
   {
-    question: "What makes Kaniro different from traditional banks?",
+    question: "What makes DigiDabba different from traditional banks?",
     answer: "We focus specifically on micro-deposits starting from ₹10 and flexible NPA repayments, designed for Tier 2/3 India with mobile-first experience and culturally relevant solutions."
   },
   {
@@ -220,7 +220,7 @@ const faqs = [
     answer: "We use bank-grade encryption and work directly with RBI-approved partner banks. Your funds remain with trusted banking institutions while we provide the digital interface."
   },
   {
-    question: "Can businesses partner with Kaniro for employee benefits?",
+    question: "Can businesses partner with DigiDabba for employee benefits?",
     answer: "Yes! We offer corporate partnerships for employee financial wellness programs. Contact our partnership team to discuss custom solutions for your organization."
   },
   {
@@ -228,7 +228,7 @@ const faqs = [
     answer: "We provide support in 15+ Indian languages including Hindi, Tamil, Telugu, Malayalam, Kannada, Bengali, Gujarati, Marathi, and more through our multilingual support team."
   },
   {
-    question: "How does Kaniro Design Studio work?",
+    question: "How does DigiDabba Design Studio work?",
     answer: "Our design studio offers specialized BFSI design services including banking UX research, design systems, and compliance-focused design solutions. Contact us for a consultation."
   }
 ];
@@ -311,7 +311,7 @@ export function ContactSection() {
                 Connect With
               </span>
               <br />
-              <span className="text-gray-900">Team Kaniro</span>
+              <span className="text-gray-900">Team DigiDabba</span>
             </motion.h1>
             
             <motion.p 
