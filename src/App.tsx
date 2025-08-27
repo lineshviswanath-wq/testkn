@@ -14,7 +14,7 @@ import { BlogSection } from "./components/BlogSection";
 import { ContactSection } from "./components/ContactSection";
 
 export type NavigationState = {
-  currentView: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'blog';
+  currentView: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'blog' | 'dabba';
   showLoginModal: boolean;
   showSignupModal: boolean;
   showDemoModal: boolean;
@@ -63,6 +63,13 @@ export default function App() {
         <Header />
         <main>
           {navigation.currentView === 'home' && (
+            <>
+              <HeroSection />
+              <MicroDepositsSection />
+              <NPARepaymentSection />
+            </>
+          )}
+          {navigation.currentView === 'dabba' && (
             <>
               <HeroSection />
               <MicroDepositsSection />

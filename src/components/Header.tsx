@@ -23,12 +23,12 @@ export function Header() {
     }
   }, [showMobileMenu]);
 
-  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'goals' | 'blog') => {
+  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'dabba' | 'blog') => {
     if (view === 'home') {
       setNavigation({ currentView: view });
       // If we're on home page, scroll to top
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'goals') {
+    } else if (view === 'dabba') {
       // Navigate to home page
       setNavigation({ currentView: 'home' });
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
@@ -77,7 +77,7 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <button 
-            onClick={() => handleNavClick('goals')}
+            onClick={() => handleNavClick('dabba')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
             Kaniro Dabba
@@ -147,7 +147,7 @@ export function Header() {
           <nav className="container mx-auto px-4 py-4 space-y-4">
             <button 
               onClick={() => {
-                handleNavClick('goals');
+                handleNavClick('dabba');
                 setShowMobileMenu(false);
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"

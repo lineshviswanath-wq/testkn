@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { ArrowRight, Target, CreditCard, TrendingUp, Play } from "lucide-react";
+import { ArrowRight, Target, CreditCard, TrendingUp, Play, Smartphone, Heart, Shield } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { NavigationContext } from "../App";
 import { motion } from "motion/react";
+import traditionalDabbaWoman from 'figma:asset/07f91250c3121b441bd1934b094b1e4d5d69dfb6.png';
 
 export function HeroSection() {
   const { setNavigation, scrollToSection } = useContext(NavigationContext);
@@ -18,17 +19,17 @@ export function HeroSection() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-green-50 py-16 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-blue-50 to-green-50 py-20 relative overflow-hidden min-h-[90vh] flex items-center">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6 relative">
+        <div className="grid lg:grid-cols-12 gap-16 items-center max-w-7xl mx-auto">
+          {/* Content - 7 columns for better proportion */}
+          <div className="lg:col-span-7 space-y-8 relative">
             {/* Animated circular elements on the left side */}
             <motion.div
-              className="absolute -left-20 top-0 w-32 h-32 rounded-full bg-gradient-to-br from-blue-400/30 to-green-400/30 blur-2xl"
+              className="absolute -left-20 top-0 w-32 h-32 rounded-full bg-gradient-to-br from-blue-400/20 to-green-400/20 blur-2xl"
               animate={{
                 rotate: 360,
-                scale: [1, 1.3, 1],
+                scale: [1, 1.2, 1],
               }}
               transition={{
                 rotate: {
@@ -45,10 +46,10 @@ export function HeroSection() {
             />
             
             <motion.div
-              className="absolute -left-16 top-16 w-24 h-24 rounded-full border-4 border-blue-300/40"
+              className="absolute -left-16 top-16 w-24 h-24 rounded-full border-4 border-blue-300/30"
               animate={{
                 rotate: -360,
-                scale: [1, 1.2, 1],
+                scale: [1, 1.1, 1],
               }}
               transition={{
                 rotate: {
@@ -65,10 +66,10 @@ export function HeroSection() {
             />
 
             <motion.div
-              className="absolute -left-12 top-32 w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-blue-500/20"
+              className="absolute -left-12 top-32 w-16 h-16 rounded-full bg-gradient-to-br from-green-500/15 to-blue-500/15"
               animate={{
                 rotate: 360,
-                scale: [0.8, 1.4, 0.8],
+                scale: [0.8, 1.3, 0.8],
               }}
               transition={{
                 rotate: {
@@ -84,149 +85,164 @@ export function HeroSection() {
               }}
             />
 
-            <div className="space-y-6 relative z-10">
-              {/* Financial Inclusion Platform Badge */}
+            <div className="space-y-7 relative z-10">
+              {/* Kaniro Dabba Badge */}
               <motion.div 
-                className="flex items-center gap-3 mb-4"
+                className="flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full shadow-lg">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-green-500 text-white px-5 py-2.5 rounded-full shadow-lg">
                   <Target className="size-4" />
-                  <span className="font-medium">Kaniro Dabba - Micro Deposit & Repay Platform</span>
+                  <span className="font-medium">Kaniro Dabba - Your Digital Money Box</span>
                 </div>
               </motion.div>
               
               <motion.h1 
-                className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+                className="text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Bridging the Gap in
-                <span className="text-blue-600"> Financial Inclusion</span>
-                <br />
-                <span className="text-2xl md:text-3xl font-medium text-gray-700">through Digital Banking Innovation</span>
+                Kaniro Dabba –
+                <span className="text-blue-600"> Your Digital Money Box</span>
               </motion.h1>
               
               <motion.p 
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-xl text-gray-700 leading-relaxed font-medium max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Empowering Tier 2/3 India with accessible micro-deposits and flexible NPA repayments. 
-                Transform your financial journey with daily savings and stress-free loan repayments.
+                Bringing back the trusted habit of the old dabba savings, now reimagined for the digital age.
+              </motion.p>
+
+              <motion.p 
+                className="text-lg text-gray-600 leading-relaxed max-w-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                With Kaniro Dabba, anyone can deposit small amounts daily—just like dropping coins into a dabba at home—and use these deposits to build savings or repay loans with ease. Designed especially for rural India's saving culture, it also empowers urban and young users to adopt a simple, disciplined financial lifestyle.
+              </motion.p>
+
+              {/* Bank Safety Message - Positioned prominently */}
+              <motion.div 
+                className="relative z-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <div className="bg-gradient-to-r from-blue-500/10 via-white to-green-500/10 p-6 rounded-2xl border-2 border-blue-200/50 shadow-lg backdrop-blur-sm relative overflow-hidden">
+                  {/* Decorative gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-white/90 to-green-50/80 rounded-2xl"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center gap-4">
+                    <motion.div 
+                      className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, 360],
+                        scale: [1, 1.05, 1]
+                      }}
+                      transition={{ 
+                        rotate: {
+                          duration: 8, 
+                          repeat: Infinity, 
+                          ease: "linear"
+                        },
+                        scale: {
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    >
+                      <Shield className="size-6 text-white" />
+                    </motion.div>
+                    
+                    <div className="flex-1">
+                      <div className="mb-2">
+                        <span className="inline-block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent font-bold text-lg">
+                          🛡️ Your Money Safe at Partner Bank Accounts
+                        </span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        We are facilitating the banking services at your{' '}
+                        <span className="font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-md">doorstep</span>
+                        {' / '}
+                        <span className="font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">fingertip</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Security badges */}
+                  <div className="relative z-10 flex items-center gap-3 mt-4 pt-4 border-t border-gray-200/50">
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span>Bank-grade Security</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span>RBI Compliant</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span>256-bit Encrypted</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.p 
+                className="text-lg text-gray-600 leading-relaxed max-w-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                From micro-deposits to stress-free loan repayments, <span className="font-semibold text-gray-800">Kaniro Dabba bridges the gap in financial inclusion and helps every household take control of its financial journey.</span>
               </motion.p>
             </div>
 
-            {/* Key Features */}
+            {/* Stats - Moved up to fill space and create better left side balance */}
             <motion.div 
-              className="grid sm:grid-cols-2 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <button 
-                onClick={() => scrollToSection('deposits')}
-                className="flex items-center gap-3 p-4 bg-white rounded-lg border hover:shadow-md transition-shadow text-left group"
-              >
-                <div className="p-2 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
-                  <TrendingUp className="size-5 text-green-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Micro Deposits</h4>
-                  <p className="text-sm text-gray-600">Start saving from ₹10/day</p>
-                </div>
-              </button>
-              
-              <button 
-                onClick={() => scrollToSection('repayments')}
-                className="flex items-center gap-3 p-4 bg-white rounded-lg border hover:shadow-md transition-shadow text-left group"
-              >
-                <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                  <CreditCard className="size-5 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">NPA Repayments</h4>
-                  <p className="text-sm text-gray-600">Flexible daily/weekly payments</p>
-                </div>
-              </button>
-            </motion.div>
-
-            {/* CTA */}
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex items-center gap-12 pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button 
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-3 group"
-                onClick={handleStartJourney}
-              >
-                Start Your Journey
-                <ArrowRight className="size-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                className="px-6 py-3 group"
-                onClick={handleWatchDemo}
-              >
-                <Play className="size-4 mr-2 group-hover:scale-110 transition-transform" />
-                Watch Demo
-              </Button>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div 
-              className="flex items-center gap-8 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
               <div className="text-center">
                 <motion.div 
-                  className="text-2xl font-bold text-blue-600"
+                  className="text-3xl font-bold text-blue-600"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  450M+
+                  ₹100+
                 </motion.div>
-                <div className="text-sm text-gray-600">Target Users</div>
+                <div className="text-sm text-gray-600 mt-1">Min Loan Due Repayments</div>
               </div>
               <div className="text-center">
                 <motion.div 
-                  className="text-2xl font-bold text-green-600"
+                  className="text-3xl font-bold text-green-600"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
                   ₹10+
                 </motion.div>
-                <div className="text-sm text-gray-600">Min. Daily Savings</div>
-              </div>
-              <div className="text-center">
-                <motion.div 
-                  className="text-2xl font-bold text-blue-600"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  25+
-                </motion.div>
-                <div className="text-sm text-gray-600">Partner Banks</div>
+                <div className="text-sm text-gray-600 mt-1">Min. Daily Dabba</div>
               </div>
             </motion.div>
           </div>
 
-          {/* Visual */}
-          <div className="relative lg:pl-8">
+          {/* Visual - Split Screen Design - 5 columns for better proportion */}
+          <div className="lg:col-span-5 relative flex flex-col justify-center items-center space-y-8">
             {/* Large animated circular background element */}
             <motion.div
-              className="absolute inset-0 w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-blue-400/20 to-green-400/20 blur-3xl"
+              className="absolute inset-0 w-96 h-96 mx-auto rounded-full bg-gradient-to-br from-blue-400/15 to-green-400/15 blur-3xl"
               animate={{
                 rotate: 360,
-                scale: [1, 1.1, 1],
+                scale: [1, 1.08, 1],
               }}
               transition={{
                 rotate: {
@@ -241,52 +257,257 @@ export function HeroSection() {
                 }
               }}
             />
-            
-            {/* Secondary animated ring */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 rounded-full border-4 border-blue-300/30"
-              animate={{
-                rotate: -360,
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                rotate: {
-                  duration: 18,
-                  repeat: Infinity,
-                  ease: "linear"
-                },
-                scale: {
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-            />
 
-            {/* Main Image Container */}
+            {/* Split Screen Container */}
             <motion.div 
-              className="relative z-10 mx-auto max-w-sm lg:max-w-md"
+              className="relative z-10 mx-auto w-full max-w-lg"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1681826291722-70bd7e9e6fc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBiYW5raW5nJTIwYXBwfGVufDF8fHx8MTc1NTQwMDEyMHww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Mobile Banking App"
-                className="rounded-2xl shadow-2xl w-full"
-              />
+              <div className="relative w-full h-[450px] rounded-3xl shadow-2xl overflow-hidden bg-white">
+                {/* Split Screen Images */}
+                <div className="flex h-full">
+                  {/* Traditional Indian Woman - Left Side */}
+                  <motion.div 
+                    className="w-1/2 relative overflow-hidden"
+                    initial={{ x: -50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  >
+                    <img
+                      src={traditionalDabbaWoman}
+                      alt="Indian woman in traditional yellow saree putting coin in red clay dabba pot - authentic traditional savings culture"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Subtle overlay for visual enhancement */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/8 to-transparent"></div>
+                  </motion.div>
+
+                  {/* Creative Separator */}
+                  <div className="relative w-0 flex-shrink-0">
+                    {/* Connecting Bridge Design */}
+                    <motion.div 
+                      className="absolute inset-y-0 -left-5 w-10 bg-gradient-to-b from-green-400 via-blue-400 to-green-400 rounded-full shadow-xl z-10"
+                      animate={{
+                        background: [
+                          "linear-gradient(to bottom, #22C55E, #3B82F6, #22C55E)",
+                          "linear-gradient(to bottom, #3B82F6, #22C55E, #3B82F6)",
+                          "linear-gradient(to bottom, #22C55E, #3B82F6, #22C55E)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    
+                    {/* Bridge Symbol */}
+                    <motion.div 
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center z-20"
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 360]
+                      }}
+                      transition={{
+                        scale: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        },
+                        rotate: {
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }
+                      }}
+                    >
+                      <Heart className="size-7 text-blue-600" />
+                    </motion.div>
+
+                    {/* Connecting dots */}
+                    <motion.div 
+                      className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3 h-3 bg-blue-400 rounded-full"
+                      animate={{
+                        scale: [0.8, 1.3, 0.8],
+                        opacity: [0.5, 1, 0.5]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-3 h-3 bg-green-400 rounded-full"
+                      animate={{
+                        scale: [0.8, 1.3, 0.8],
+                        opacity: [0.5, 1, 0.5]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.75
+                      }}
+                    />
+                  </div>
+
+                  {/* Young Indian Man - Right Side */}
+                  <motion.div 
+                    className="w-1/2 relative overflow-hidden"
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                  >
+                    <ImageWithFallback
+                      src="https://images.unsplash.com/photo-1670408378363-10c1eb4caf41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBtYW4lMjBzbWFydHBob25lJTIweW91bmclMjB1cmJhbiUyMGhhcHB5fGVufDF8fHx8MTc1NjI4ODQzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                      alt="Young Indian man happily using Kaniro Dabba mobile app"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Subtle overlay for visual enhancement */}
+                    <div className="absolute inset-0 bg-gradient-to-l from-blue-500/8 to-transparent"></div>
+                  </motion.div>
+                </div>
+
+                {/* Main Title Overlay */}
+                <motion.div 
+                  className="absolute top-5 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-5 py-3 rounded-full shadow-lg z-30"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Smartphone className="size-4 text-blue-600" />
+                    <span className="text-sm font-semibold text-gray-800">Digital Dabba for All</span>
+                  </div>
+                </motion.div>
+
+                {/* Enhanced coin animation elements */}
+                <motion.div
+                  className="absolute top-6 right-6 w-10 h-10 bg-yellow-400/90 rounded-full shadow-lg z-30 flex items-center justify-center"
+                  animate={{
+                    y: [0, -25, 0],
+                    rotate: [0, 180, 360],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                >
+                  <span className="text-yellow-800 font-bold text-xs">₹</span>
+                </motion.div>
+                
+                <motion.div
+                  className="absolute top-16 right-12 w-8 h-8 bg-orange-400/90 rounded-full shadow-lg z-30 flex items-center justify-center"
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, -180, -360],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                >
+                  <span className="text-orange-800 font-bold text-xs">₹</span>
+                </motion.div>
+                
+                <motion.div
+                  className="absolute top-24 right-16 w-6 h-6 bg-amber-400/90 rounded-full shadow-lg z-30 flex items-center justify-center"
+                  animate={{
+                    y: [0, -15, 0],
+                    rotate: [0, 360, 720],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.5
+                  }}
+                >
+                  <span className="text-amber-800 font-bold text-xs">₹</span>
+                </motion.div>
+              </div>
             </motion.div>
-            
-            {/* Floating Cards - Better positioned to avoid overlap */}
+
+            {/* Feature Cards - Below image */}
+            <motion.div 
+              className="w-full max-w-lg space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              <button 
+                onClick={() => scrollToSection('deposits')}
+                className="w-full flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-gray-100 hover:border-green-200 hover:shadow-lg transition-all duration-300 text-left group hover:scale-[1.02]"
+              >
+                <div className="p-3 bg-green-100 rounded-xl group-hover:bg-green-200 transition-colors flex-shrink-0">
+                  <TrendingUp className="size-6 text-green-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-gray-900 text-lg">Daily Dabba Deposits</h4>
+                  <p className="text-gray-600">Start saving from ₹10/day</p>
+                </div>
+                <ArrowRight className="size-5 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all flex-shrink-0" />
+              </button>
+              
+              <button 
+                onClick={() => scrollToSection('repayments')}
+                className="w-full flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 text-left group hover:scale-[1.02]"
+              >
+                <div className="p-3 bg-blue-100 rounded-xl group-hover:bg-blue-200 transition-colors flex-shrink-0">
+                  <CreditCard className="size-6 text-blue-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-gray-900 text-lg">Stress-Free Repayments</h4>
+                  <p className="text-gray-600">Flexible daily/weekly payments</p>
+                </div>
+                <ArrowRight className="size-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0" />
+              </button>
+            </motion.div>
+
+            {/* MOVED CTA Buttons here - After feature cards for natural flow */}
+            <motion.div 
+              className="w-full max-w-lg space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+            >
+              <Button 
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 group text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleStartJourney}
+              >
+                <Target className="size-5 mr-2" />
+                Start Your Dabba Journey
+                <ArrowRight className="size-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className="w-full px-8 py-4 group text-lg border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 transition-all duration-300"
+                onClick={handleWatchDemo}
+              >
+                <Play className="size-5 mr-2 group-hover:scale-110 transition-transform" />
+                Watch Demo
+                <ArrowRight className="size-4 ml-2 group-hover:translate-x-1 transition-transform opacity-60" />
+              </Button>
+            </motion.div>
+
+            {/* Floating Cards - Repositioned for mobile experience */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
             >
-              <Card className="absolute top-8 left-0 lg:left-4 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[140px] hidden sm:block">
+              <Card className="absolute top-12 -left-8 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[160px] hidden lg:block">
                 <div className="flex items-center gap-2">
                   <motion.div 
-                    className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"
+                    className="w-2.5 h-2.5 bg-green-500 rounded-full flex-shrink-0"
                     animate={{
                       scale: [1, 1.5, 1],
                     }}
@@ -297,8 +518,8 @@ export function HeroSection() {
                     }}
                   />
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900 truncate">Daily Dubba Deposit</div>
-                    <div className="text-xs text-gray-600">Starts from ₹10</div>
+                    <div className="text-xs font-semibold text-gray-900 truncate">Traditional Savings</div>
+                    <div className="text-xs text-gray-600">Made Digital</div>
                   </div>
                 </div>
               </Card>
@@ -307,12 +528,12 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              transition={{ duration: 0.8, delay: 2.0 }}
             >
-              <Card className="absolute bottom-12 right-0 lg:right-4 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[140px] hidden sm:block">
+              <Card className="absolute top-32 -right-8 p-3 shadow-lg bg-white/95 backdrop-blur z-20 max-w-[160px] hidden lg:block">
                 <div className="flex items-center gap-2">
                   <motion.div 
-                    className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"
+                    className="w-2.5 h-2.5 bg-blue-500 rounded-full flex-shrink-0"
                     animate={{
                       scale: [1, 1.5, 1],
                     }}
@@ -324,35 +545,12 @@ export function HeroSection() {
                     }}
                   />
                   <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900 truncate">NPA Loan Payment</div>
-                    <div className="text-xs text-gray-600">Starts from ₹100</div>
+                    <div className="text-xs font-semibold text-gray-900 truncate">Modern Banking</div>
+                    <div className="text-xs text-gray-600">Simple & Smart</div>
                   </div>
                 </div>
               </Card>
             </motion.div>
-
-            {/* Mobile-only cards positioned below image */}
-            <div className="flex justify-between gap-4 mt-6 sm:hidden">
-              <Card className="p-3 shadow-lg bg-white/95 backdrop-blur flex-1">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900">Daily Dubba Deposit</div>
-                    <div className="text-xs text-gray-600">Starts from ₹10</div>
-                  </div>
-                </div>
-              </Card>
-              
-              <Card className="p-3 shadow-lg bg-white/95 backdrop-blur flex-1">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-semibold text-gray-900">NPA Loan Payment</div>
-                    <div className="text-xs text-gray-600">Starts from ₹100</div>
-                  </div>
-                </div>
-              </Card>
-            </div>
           </div>
         </div>
       </div>
