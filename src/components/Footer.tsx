@@ -1,4 +1,4 @@
-import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Smartphone, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import kaniroLogo from "figma:asset/59a4e87f6f8559c1e33304344c14ed5d1faafe70.png";
 
@@ -19,6 +19,36 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               Empowering financial inclusion through accessible micro-deposits and flexible loan repayments for Tier 2/3 India.
             </p>
+            {/* App Store Buttons */}
+            <div className="space-y-3">
+              <p className="text-sm text-gray-300 font-medium">Download DIGIDABBA App</p>
+              <div className="flex flex-col gap-2">
+                <Button 
+                  variant="outline"
+                  size="sm" 
+                  className="bg-black hover:bg-gray-800 text-white border-gray-600 hover:border-gray-500 flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300"
+                >
+                  <Smartphone className="size-4" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-300">Download on the</div>
+                    <div className="text-sm font-semibold">App Store</div>
+                  </div>
+                </Button>
+                <Button 
+                  variant="outline"
+                  size="sm" 
+                  className="bg-black hover:bg-gray-800 text-white border-gray-600 hover:border-gray-500 flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300"
+                >
+                  <Download className="size-4" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-300">Get it on</div>
+                    <div className="text-sm font-semibold">Google Play</div>
+                  </div>
+                </Button>
+              </div>
+            </div>
+
+            {/* Social Media */}
             <div className="flex gap-3">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-2">
                 <Facebook className="size-4" />
@@ -58,19 +88,23 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">Customer Care</h4>
             <div className="space-y-3 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <MapPin className="size-4 flex-shrink-0" />
-                <span>Kerala & South India (Phase 1)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="size-4 flex-shrink-0" />
-                <span>1800-XXX-XXXX</span>
+              <div className="bg-gradient-to-r from-green-600 to-blue-600 p-3 rounded-lg mb-4">
+                <div className="text-white font-semibold text-sm mb-1">24/7 Customer Care</div>
+                <div className="flex items-center gap-2 text-white">
+                  <Phone className="size-4 flex-shrink-0" />
+                  <span className="font-bold">+91 484-2969-888</span>
+                </div>
+                <div className="text-green-100 text-xs mt-1">Toll Free • Always Available</div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-4 flex-shrink-0" />
-                <span>hello@kanirofinance.com</span>
+                <span>care@digidabba.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="size-4 flex-shrink-0" />
+                <span>Kerala & South India (Phase 1)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Building2 className="size-4 flex-shrink-0" />

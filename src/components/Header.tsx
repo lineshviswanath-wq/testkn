@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { NavigationContext } from "../App";
 import kaniroLogo from "figma:asset/59a4e87f6f8559c1e33304344c14ed5d1faafe70.png";
 
@@ -80,7 +80,7 @@ export function Header() {
             onClick={() => handleNavClick('dabba')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            DigiDabba
+            DIGIDABBA
           </button>
 
           <button 
@@ -112,7 +112,16 @@ export function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          {/* Customer Care - Prominent display */}
+          <a 
+            href="tel:+914842969888"
+            className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-2 rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 text-sm font-medium"
+          >
+            <Phone className="size-4" />
+            +91 484-2969-888
+          </a>
+          
           <Button 
             variant="ghost" 
             size="sm" 
@@ -152,7 +161,7 @@ export function Header() {
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              DigiDabba
+              DIGIDABBA
             </button>
 
             <button 
@@ -193,6 +202,16 @@ export function Header() {
             >
               Contact
             </button>
+
+            {/* Mobile Customer Care */}
+            <a 
+              href="tel:+914842969888"
+              className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              <Phone className="size-4" />
+              Customer Care: +91 484-2969-888
+            </a>
 
             {/* Mobile Login Button */}
             <Button 

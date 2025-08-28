@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { ArrowRight, Target, CreditCard, TrendingUp, Smartphone, Heart, Shield, CheckCircle, Building2, FileCheck, Wifi, Home, IndianRupee, Clock, MapPin, Download, Phone, Mail, MessageSquare, Truck, Monitor, Apple, PlayCircle } from "lucide-react";
+import { ArrowRight, Target, CreditCard, TrendingUp, Smartphone, Heart, Shield, CheckCircle, Building2, FileCheck, Wifi, Home, IndianRupee, Clock, MapPin, Download, Phone, Mail, MessageSquare, Truck, App } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { NavigationContext } from "../App";
 import { motion } from "motion/react";
@@ -141,10 +141,8 @@ export function HeroSection() {
                   <span className="text-gray-900 font-bold"> Your Secure Tomorrow!</span>
                 </p>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                  <span className="font-semibold text-[#1E4A72]">Small savings today, life-changing tomorrow</span>—start with <span className="font-bold text-[#22C55E]">₹10!</span>
-                </p>
-                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                  From micro-deposits to easy loan repayments, <span className="font-bold text-[#1E4A72]">DigiDabba</span> empowers every household—urban, rural, or homemaker—driving true financial inclusion with <span className="font-semibold text-[#22C55E]">simple, worry-free money management.</span>
+                  <span className="font-semibold text-[#1E4A72]">Just ₹10 daily</span> can transform your financial journey. 
+                  Watch how small steps lead to <span className="font-bold text-[#22C55E]">big dreams!</span>
                 </p>
               </motion.div>
 
@@ -233,15 +231,12 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <div className="mb-6 text-center lg:text-left">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="mb-4 text-center lg:text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                     <span className="text-[#22C55E]">Your Trust, Our Responsibility</span>
                   </h3>
                 </div>
-                
-                {/* Row 1: Bank Level Security + Rebuild Credit Score */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-4xl mx-auto lg:mx-0">
-                  {/* Bank Level Security */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 max-w-2xl mx-auto lg:mx-0">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -256,7 +251,7 @@ export function HeroSection() {
                       />
                       <div className="flex items-center gap-3 relative z-10">
                         <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#22C55E] to-green-600 rounded-xl flex items-center justify-center shadow-lg"
+                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#22C55E] to-green-600 rounded-2xl flex items-center justify-center shadow-xl"
                           animate={{ 
                             scale: [1, 1.1, 1],
                             boxShadow: [
@@ -281,7 +276,6 @@ export function HeroSection() {
                     </Card>
                   </motion.div>
 
-                  {/* Rebuild Credit Score */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -296,7 +290,7 @@ export function HeroSection() {
                       />
                       <div className="flex items-center gap-3 relative z-10">
                         <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1E4A72] to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1E4A72] to-blue-600 rounded-2xl flex items-center justify-center shadow-xl"
                           animate={{ 
                             scale: [1, 1.1, 1],
                             boxShadow: [
@@ -321,11 +315,8 @@ export function HeroSection() {
                       </div>
                     </Card>
                   </motion.div>
-                </div>
 
-                {/* Row 2: Omnichannel + Doorstep Service */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto lg:mx-0">
-                  {/* Omnichannel */}
+                  {/* Omnichannel Doorstep Service Card */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -340,7 +331,7 @@ export function HeroSection() {
                       />
                       <div className="flex items-center gap-3 relative z-10">
                         <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg"
+                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl"
                           animate={{ 
                             scale: [1, 1.1, 1],
                             boxShadow: [
@@ -356,149 +347,56 @@ export function HeroSection() {
                             delay: 1.0
                           }}
                         >
-                          <Monitor className="size-6 text-white" />
+                          <Truck className="size-6 text-white" />
                         </motion.div>
                         <div className="min-w-0">
-                          <div className="font-bold text-gray-900 text-sm sm:text-base">Omnichannel</div>
-                          <div className="text-xs sm:text-sm text-orange-600 font-medium">Multiple Channels</div>
+                          <div className="font-bold text-gray-900 text-sm sm:text-base">Omnichannel Doorstep</div>
+                          <div className="text-xs sm:text-sm text-orange-600 font-medium">Service at Your Doorstep</div>
                         </div>
                       </div>
                     </Card>
                   </motion.div>
 
-                  {/* Doorstep Service */}
+                  {/* Download App Card */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
                     whileHover={{ scale: 1.05, y: -3 }}
                   >
-                    <Card className="p-4 sm:p-5 bg-gradient-to-br from-[#ECFCCB] to-lime-50 border-2 border-lime-300/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                    <Card className="p-4 sm:p-5 bg-gradient-to-br from-[#F3E8FF] to-purple-50 border-2 border-purple-300/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                       <motion.div
-                        className="absolute top-0 right-0 w-16 h-16 bg-lime-400/10 rounded-full -mr-8 -mt-8"
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-                      />
-                      <div className="flex items-center gap-3 relative z-10">
-                        <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-lime-500 to-lime-600 rounded-xl flex items-center justify-center shadow-lg"
-                          animate={{ 
-                            scale: [1, 1.1, 1],
-                            boxShadow: [
-                              "0 4px 20px rgba(132, 204, 22, 0.3)",
-                              "0 8px 30px rgba(132, 204, 22, 0.5)",
-                              "0 4px 20px rgba(132, 204, 22, 0.3)"
-                            ]
-                          }}
-                          transition={{ 
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: 1.2
-                          }}
-                        >
-                          <Truck className="size-6 text-white" />
-                        </motion.div>
-                        <div className="min-w-0">
-                          <div className="font-bold text-gray-900 text-sm sm:text-base">Doorstep Service</div>
-                          <div className="text-xs sm:text-sm text-lime-600 font-medium">Home Delivery</div>
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-                </div>
-
-                {/* Separator Line */}
-                <motion.div 
-                  className="flex justify-center mb-4"
-                  initial={{ opacity: 0, scaleX: 0 }}
-                  animate={{ opacity: 1, scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 1.25 }}
-                >
-                  <div className="h-px w-32 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                </motion.div>
-
-                {/* Row 3: App Store + Google Play Download Buttons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 max-w-4xl mx-auto lg:mx-0">
-                  {/* App Store Download Button */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.3 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="cursor-pointer"
-                  >
-                    <Card className="p-4 sm:p-5 bg-gradient-to-r from-gray-900 to-black border-2 border-gray-700/50 hover:border-gray-600/70 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                      <motion.div
-                        className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-full -mr-8 -mt-8"
+                        className="absolute top-0 right-0 w-16 h-16 bg-purple-400/10 rounded-full -mr-8 -mt-8"
                         animate={{ rotate: -360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                       />
                       <div className="flex items-center gap-3 relative z-10">
                         <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg"
+                          className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl"
                           animate={{ 
-                            scale: [1, 1.05, 1],
+                            scale: [1, 1.1, 1],
                             boxShadow: [
-                              "0 4px 20px rgba(255, 255, 255, 0.2)",
-                              "0 8px 30px rgba(255, 255, 255, 0.3)",
-                              "0 4px 20px rgba(255, 255, 255, 0.2)"
+                              "0 4px 20px rgba(147, 51, 234, 0.3)",
+                              "0 8px 30px rgba(147, 51, 234, 0.5)",
+                              "0 4px 20px rgba(147, 51, 234, 0.3)"
                             ]
                           }}
                           transition={{ 
                             duration: 3,
                             repeat: Infinity,
                             ease: "easeInOut",
-                            delay: 1.3
+                            delay: 1.5
                           }}
                         >
-                          <Apple className="size-6 text-black" />
+                          <Download className="size-6 text-white" />
                         </motion.div>
                         <div className="min-w-0">
-                          <div className="text-xs text-gray-300 uppercase tracking-wide">Download on the</div>
-                          <div className="font-bold text-white text-lg">App Store</div>
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-
-                  {/* Google Play Download Button */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.4 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="cursor-pointer"
-                  >
-                    <Card className="p-4 sm:p-5 bg-gradient-to-r from-green-600 to-green-700 border-2 border-green-500/50 hover:border-green-400/70 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                      <motion.div
-                        className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -mr-8 -mt-8"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-                      />
-                      <div className="flex items-center gap-3 relative z-10">
-                        <motion.div 
-                          className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg"
-                          animate={{ 
-                            scale: [1, 1.05, 1],
-                            boxShadow: [
-                              "0 4px 20px rgba(255, 255, 255, 0.2)",
-                              "0 8px 30px rgba(255, 255, 255, 0.3)",
-                              "0 4px 20px rgba(255, 255, 255, 0.2)"
-                            ]
-                          }}
-                          transition={{ 
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: 1.4
-                          }}
-                        >
-                          <PlayCircle className="size-6 text-green-600" />
-                        </motion.div>
-                        <div className="min-w-0">
-                          <div className="text-xs text-green-100 uppercase tracking-wide">Get it on</div>
-                          <div className="font-bold text-white text-lg">Google Play</div>
+                          <div className="font-bold text-gray-900 text-sm sm:text-base">Download Our App</div>
+                          <div className="text-xs sm:text-sm text-purple-600 font-medium flex items-center gap-1">
+                            <span>📱 App Store</span>
+                            <span>•</span>
+                            <span>🏪 Google Play</span>
+                          </div>
                         </div>
                       </div>
                     </Card>
