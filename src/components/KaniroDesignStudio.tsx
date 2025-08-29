@@ -179,7 +179,7 @@ export function KaniroDesignStudio() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text text-transparent block mb-2">
-                    KanCX
+                    FINTX STUDIO
                   </span>
                   <span className="text-2xl md:text-3xl font-medium text-gray-700 block leading-relaxed">
                     Design Thinking Meets Go-to-Market Success

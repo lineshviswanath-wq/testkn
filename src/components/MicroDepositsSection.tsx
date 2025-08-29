@@ -72,7 +72,7 @@ const testimonials = [
     location: "Kochi, Kerala",
     amount: "₹50/day",
     duration: "8 months",
-    quote: "Started with just ₹50 daily deposits through DIGIDABBA. My SBI RD has grown to ₹12,500 now!",
+    quote: "Started with just ₹50 daily deposits through DABBA SAVE. My SBI RD has grown to ₹12,500 now!",
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612d4c3?w=150"
   },
   {
@@ -180,7 +180,7 @@ export function MicroDepositsSection() {
             >
               <TrendingUp className="size-5" />
             </motion.div>
-            <span className="font-bold text-lg">DIGIDABBA Deposit Marketplace</span>
+            <span className="font-bold text-lg">DABBA SAVE Deposit Marketplace</span>
           </motion.div>
           
           <motion.h2 
@@ -471,7 +471,7 @@ export function MicroDepositsSection() {
                         className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg group"
                         onClick={() => handleStartRD(offer.bankName)}
                       >
-                        Start DIGIDABBA
+                        Start DABBA SAVE
                         <motion.div
                           className="ml-2"
                           animate={{ x: [0, 5, 0] }}

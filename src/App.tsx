@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
+import { HeroSectionWithContact } from "./components/HeroSectionWithContact";
+
+import { DepositCalculator } from "./components/DepositCalculator";
 import { MicroDepositsSection } from "./components/MicroDepositsSection";
 import { NPARepaymentSection } from "./components/NPARepaymentSection";
+
+import { PartnerBanksCard } from "./components/PartnerBanksCard";
+import { DabbaSavePage } from "./components/DabbaSavePage";
+import { DabbaPayPage } from "./components/DabbaPayPage";
 import { Dashboard } from "./components/Dashboard";
 import { Footer } from "./components/Footer";
 import { LoginModal } from "./components/LoginModal";
 import { SignupModal } from "./components/SignupModal";
 import { DemoModal } from "./components/DemoModal";
 import { KaniroDesignStudio } from "./components/KaniroDesignStudio";
+
 import { AboutSection } from "./components/AboutSection";
-import { BlogSection } from "./components/BlogSection";
+
 import { ContactSection } from "./components/ContactSection";
 
 export type NavigationState = {
-  currentView: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'blog' | 'dabba';
+  currentView: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'fintx-studio' | 'about' | 'contact' | 'dabbasave' | 'dabbapay' | 'dabbasavepay';
   showLoginModal: boolean;
   showSignupModal: boolean;
   showDemoModal: boolean;
@@ -27,14 +35,14 @@ export type NavigationContextType = {
 };
 
 export const NavigationContext = React.createContext<NavigationContextType>({
-  navigation: { currentView: 'home', showLoginModal: false, showSignupModal: false, showDemoModal: false },
+  navigation: { currentView: 'about', showLoginModal: false, showSignupModal: false, showDemoModal: false },
   setNavigation: () => {},
   scrollToSection: () => {},
 });
 
 export default function App() {
   const [navigation, setNavigationState] = useState<NavigationState>({
-    currentView: 'home',
+    currentView: 'about',
     showLoginModal: false,
     showSignupModal: false,
     showDemoModal: false,
@@ -65,24 +73,36 @@ export default function App() {
           {navigation.currentView === 'home' && (
             <>
               <HeroSection />
+              <DepositCalculator />
               <MicroDepositsSection />
-              <NPARepaymentSection />
             </>
           )}
-          {navigation.currentView === 'dabba' && (
+          {navigation.currentView === 'dabbasave' && (
             <>
               <HeroSection />
+              <DepositCalculator />
               <MicroDepositsSection />
-              <NPARepaymentSection />
+              <PartnerBanksCard />
+            </>
+          )}
+          {navigation.currentView === 'dabbapay' && <DabbaPayPage />}
+          {navigation.currentView === 'dabbasavepay' && (
+            <>
+              <HeroSection />
+              <DepositCalculator />
+              <MicroDepositsSection />
+              <PartnerBanksCard />
+              <DabbaPayPage />
+              <ContactSection />
             </>
           )}
           {navigation.currentView === 'dashboard' && <Dashboard />}
           {navigation.currentView === 'deposits' && <MicroDepositsSection />}
           {navigation.currentView === 'repayments' && <NPARepaymentSection />}
-          {navigation.currentView === 'kancx' && <KaniroDesignStudio />}
+          {navigation.currentView === 'fintx-studio' && <KaniroDesignStudio />}
           {navigation.currentView === 'about' && <AboutSection />}
           {navigation.currentView === 'contact' && <ContactSection />}
-          {navigation.currentView === 'blog' && <BlogSection />}
+
         </main>
         <Footer />
         

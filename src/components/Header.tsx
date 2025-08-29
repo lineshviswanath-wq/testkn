@@ -23,14 +23,22 @@ export function Header() {
     }
   }, [showMobileMenu]);
 
-  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'kancx' | 'about' | 'contact' | 'dabba' | 'blog') => {
+  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'fintx-studio' | 'about' | 'contact' | 'dabbasave' | 'dabbapay' | 'dabbasavepay') => {
     if (view === 'home') {
       setNavigation({ currentView: view });
       // If we're on home page, scroll to top
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'dabba') {
-      // Navigate to home page
-      setNavigation({ currentView: 'home' });
+    } else if (view === 'dabbasave') {
+      // Navigate to dabbasave page
+      setNavigation({ currentView: 'dabbasave' });
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+    } else if (view === 'dabbapay') {
+      // Navigate to dabbapay page
+      setNavigation({ currentView: 'dabbapay' });
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+    } else if (view === 'dabbasavepay') {
+      // Navigate to combined dabbasavepay page
+      setNavigation({ currentView: 'dabbasavepay' });
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
     } else if (view === 'deposits' && navigation.currentView === 'home') {
       // If on home page, scroll to deposits section
@@ -45,7 +53,7 @@ export function Header() {
   };
 
   const handleLogoClick = () => {
-    setNavigation({ currentView: 'home' });
+    setNavigation({ currentView: 'about' });
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
@@ -77,37 +85,42 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <button 
-            onClick={() => handleNavClick('dabba')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            DIGIDABBA
-          </button>
-
-          <button 
-            onClick={() => handleNavClick('kancx')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            KanCX
-          </button>
-
-          <button 
-            onClick={() => handleNavClick('blog')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Blog
-          </button>
-
-          <button 
             onClick={() => handleNavClick('about')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            About
+            What's Kaniro
           </button>
+
+          <button 
+            onClick={() => handleNavClick('dabbasave')}
+            className="text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            DABBA SAVE
+          </button>
+
+          <button 
+            onClick={() => handleNavClick('dabbapay')}
+            className="text-gray-600 hover:text-green-600 transition-colors"
+          >
+            DABBA PAY
+          </button>
+
+
+
+          <button 
+            onClick={() => handleNavClick('fintx-studio')}
+            className="text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            FINTX STUDIO
+          </button>
+
+
+
           <button 
             onClick={() => handleNavClick('contact')}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
-            Contact
+            CONTACT
           </button>
         </nav>
 
@@ -128,14 +141,14 @@ export function Header() {
             className="hidden md:flex"
             onClick={handleLoginClick}
           >
-            Login
+            LOGIN
           </Button>
           <Button 
             size="sm" 
             className="bg-blue-600 hover:bg-blue-700"
             onClick={handleGetStartedClick}
           >
-            Get Started
+            GET STARTED
           </Button>
           
           {/* Mobile Menu Button */}
@@ -156,43 +169,48 @@ export function Header() {
           <nav className="container mx-auto px-4 py-4 space-y-4">
             <button 
               onClick={() => {
-                handleNavClick('dabba');
-                setShowMobileMenu(false);
-              }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              DIGIDABBA
-            </button>
-
-            <button 
-              onClick={() => {
-                handleNavClick('kancx');
-                setShowMobileMenu(false);
-              }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              KanCX
-            </button>
-
-            <button 
-              onClick={() => {
-                handleNavClick('blog');
-                setShowMobileMenu(false);
-              }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              Blog
-            </button>
-
-            <button 
-              onClick={() => {
                 handleNavClick('about');
                 setShowMobileMenu(false);
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              About
+              What's Kaniro
             </button>
+
+            <button 
+              onClick={() => {
+                handleNavClick('dabbasave');
+                setShowMobileMenu(false);
+              }}
+              className="block text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              DABBA SAVE
+            </button>
+
+            <button 
+              onClick={() => {
+                handleNavClick('dabbapay');
+                setShowMobileMenu(false);
+              }}
+              className="block text-gray-600 hover:text-green-600 transition-colors"
+            >
+              DABBA PAY
+            </button>
+
+
+
+            <button 
+              onClick={() => {
+                handleNavClick('fintx-studio');
+                setShowMobileMenu(false);
+              }}
+              className="block text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              FINTX STUDIO
+            </button>
+
+
+
             <button 
               onClick={() => {
                 handleNavClick('contact');
@@ -200,7 +218,7 @@ export function Header() {
               }}
               className="block text-gray-600 hover:text-blue-600 transition-colors"
             >
-              Contact
+              CONTACT
             </button>
 
             {/* Mobile Customer Care */}
@@ -223,7 +241,7 @@ export function Header() {
                 setShowMobileMenu(false);
               }}
             >
-              Login
+              LOGIN
             </Button>
           </nav>
         </div>

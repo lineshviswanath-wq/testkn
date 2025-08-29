@@ -193,3 +193,38 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Progressive enhancement for mobile-first design */
+@layer utilities {
+  /* Touch-friendly button sizing */
+  .touch-manipulation {
+    touch-action: manipulation;
+    min-height: 44px; /* iOS minimum touch target */
+    min-width: 44px;
+  }
+  
+  /* Enhanced mobile spacing */
+  .mobile-safe-area {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Progressive text scaling */
+  @media (max-width: 320px) {
+    .responsive-text {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (min-width: 321px) and (max-width: 480px) {
+    .responsive-text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 481px) {
+    .responsive-text {
+      font-size: 1.125rem;
+    }
+  }
+}

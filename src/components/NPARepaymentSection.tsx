@@ -82,7 +82,7 @@ const npaPartnerBanks = [
     averageRecovery: "70%",
     minPayment: 15,
     popular: false,
-    description: "Public sector bank with strong presence in agricultural loan NPAs",
+    description: "Public sector bank with strong presence in agricultural NPAs",
     recoveryTrend: "+4.3%",
     satisfactionRate: 82
   },
@@ -205,7 +205,7 @@ export function NPARepaymentSection() {
 
   const handleCalculate = () => {
     if (customAmount) {
-      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the loan.`);
+      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the NPA.`);
     } else {
       alert('Please enter an amount to calculate.');
     }
@@ -325,7 +325,7 @@ export function NPARepaymentSection() {
               >
                 <CreditCard className="size-5" />
               </motion.div>
-              <span className="font-bold text-lg">DIGIDABBA Loan Repayment Platform</span>
+              <span className="font-bold text-lg">DIGIDABBA NPA Repayment Platform</span>
             </motion.div>
             
             <motion.h2 
@@ -335,7 +335,7 @@ export function NPARepaymentSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#1E4A72]">End Loan Stress!</span> 
+              <span className="text-[#1E4A72]">End NPA Stress!</span> 
               <span className="text-[#22C55E]"> Choose Your Bank</span>
             </motion.h2>
             
@@ -351,7 +351,7 @@ export function NPARepaymentSection() {
                 <span className="text-[#1E4A72] font-bold"> just ₹5/day!</span>
               </p>
               <p className="text-lg text-gray-600">
-                Choose your bank and start flexible loan repayment. With India's 
+                Choose your bank and start flexible NPA repayment. With India's 
                 <span className="font-semibold text-[#1E4A72]"> major banks </span> offering 
                 <span className="font-bold text-[#22C55E]"> dedicated NPA recovery programs!</span>
               </p>
@@ -674,7 +674,7 @@ export function NPARepaymentSection() {
             </Card>
           </motion.div>
 
-          {/* Bottom Info */}
+          {/* Features Section */}
           <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -682,66 +682,30 @@ export function NPARepaymentSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 bg-gradient-to-r from-blue-50 to-green-50 border-0 shadow-xl relative overflow-hidden max-w-4xl mx-auto">
-              {/* Background pattern */}
-              <motion.div
-                className="absolute inset-0 opacity-5"
-                style={{
-                  backgroundImage: "radial-gradient(circle at 2px 2px, #3B82F6 1px, transparent 0)",
-                  backgroundSize: "30px 30px"
-                }}
-                animate={{
-                  backgroundPosition: ["0px 0px", "30px 30px", "0px 0px"]
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-              
-              <div className="space-y-6 relative z-10">
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                >
-                  <PiggyBank className="size-16 text-blue-600 mx-auto mb-4" />
-                </motion.div>
-                
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Why Choose DigiDabba for NPA Repayments?
-                </h3>
-                
-                <div className="grid md:grid-cols-4 gap-6 text-center">
+            <Card className="p-8 bg-gradient-to-r from-blue-50 to-green-50 border-0 shadow-xl max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Choose DIGIDABBA for NPA Recovery?</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {features.map((feature, index) => (
                   <motion.div
+                    key={feature.title}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-3xl font-bold text-blue-600">6+</div>
-                    <div className="text-sm text-gray-600">Partner Banks</div>
+                    <motion.div
+                      className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-${feature.color}-400 to-${feature.color}-600 flex items-center justify-center shadow-lg`}
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <feature.icon className="size-8 text-white" />
+                    </motion.div>
+                    <h4 className="font-bold text-gray-900 mb-2">{feature.title}</h4>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-3xl font-bold text-green-600">73%</div>
-                    <div className="text-sm text-gray-600">Avg Recovery Rate</div>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-3xl font-bold text-purple-600">8M+</div>
-                    <div className="text-sm text-gray-600">Active Users</div>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-3xl font-bold text-orange-600">87%</div>
-                    <div className="text-sm text-gray-600">Success Rate</div>
-                  </motion.div>
-                </div>
-                
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Flexible payments starting from ₹5/day • Real-time bank updates • Improve your credit score • 24/7 support
-                </p>
+                ))}
               </div>
             </Card>
           </motion.div>
@@ -750,461 +714,150 @@ export function NPARepaymentSection() {
     );
   }
 
-  // Bank-Specific Repayment View
+  // Bank Detail View (when a bank is selected)
   return (
-    <section id="repayments" className="py-16 bg-gray-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-green-50/30"></div>
-      <motion.div
-        className="absolute top-20 -left-16 w-32 h-32 bg-gradient-to-br from-green-400/10 to-blue-400/10 rounded-full blur-2xl"
-        animate={{
-          scale: [1, 1.4, 1],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Button
+            onClick={handleBackToBanks}
+            variant="ghost"
+            className="mb-6 hover:bg-blue-50"
+          >
+            <ArrowLeft className="size-4 mr-2" />
+            Back to Banks
+          </Button>
+        </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header with Back Button */}
-        <motion.div 
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button 
-              variant="ghost" 
-              onClick={handleBackToBanks}
-              className="mb-4 hover:bg-blue-50 group"
-            >
-              <motion.div
-                animate={{ x: [0, -3, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowLeft className="size-4 mr-2" />
-              </motion.div>
-              Back to Banks
-            </Button>
-          </motion.div>
-          
-          <div className="text-center">
-            <motion.div 
-              className="inline-flex items-center gap-3 bg-blue-100 text-blue-800 px-4 py-2 rounded-full mb-4"
-              whileHover={{ scale: 1.05 }}
-            >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                <BankLogo bankKey={selectedBank.logoKey} size="sm" />
-              </motion.div>
-              <span className="font-medium">{selectedBank.name} NPA Repayment</span>
-            </motion.div>
-            
-            <motion.h2 
-              className="text-3xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Flexible Loan Repayments Made Easy
-            </motion.h2>
-            
-            <motion.p 
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Start your repayment journey with {selectedBank.name}. Make payments as low as ₹{selectedBank.minPayment}/day 
-              and rebuild your financial standing with our flexible payment options.
-            </motion.p>
-          </div>
-        </motion.div>
+          <Card className="bg-white shadow-xl border-0">
+            <CardHeader className="text-center pb-6">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <BankLogo bankKey={selectedBank.logoKey} size="xl" />
+                <div>
+                  <CardTitle className="text-2xl">{selectedBank.name}</CardTitle>
+                  <p className="text-gray-600">{selectedBank.shortName} NPA Repayment Portal</p>
+                </div>
+              </div>
+            </CardHeader>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Calculator/Demo */}
-          <motion.div 
-            className="space-y-6"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Card className="p-6 border-2 border-blue-100 shadow-xl">
-              <CardHeader className="px-0 pb-4">
-                <CardTitle className="flex items-center gap-2">
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Calculator className="size-5 text-green-600" />
-                  </motion.div>
-                  Repayment Calculator - {selectedBank.shortName}
-                </CardTitle>
-                <p className="text-sm text-gray-600">
-                  See how flexible payments can help clear your dues with {selectedBank.name}
-                </p>
-              </CardHeader>
-              
-              <CardContent className="px-0 space-y-6">
-                {/* Bank-specific Info with animations */}
-                <motion.div 
-                  className="p-4 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-lg"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="font-medium text-blue-800 mb-3 flex items-center gap-2">
-                    <Shield className="size-4" />
-                    {selectedBank.name} - Recovery Stats
-                  </h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center">
-                      <CircularProgress 
-                        percentage={parseInt(selectedBank.averageRecovery)} 
-                        color="blue" 
-                        size={80} 
-                      />
-                      <div className="text-xs text-blue-700 mt-2">Recovery Rate</div>
-                    </div>
-                    <div className="space-y-2">
-                      <div>
-                        <span className="text-gray-600 text-xs">Active Users:</span>
-                        <div className="font-semibold text-blue-700">{selectedBank.activeUsers}</div>
-                      </div>
-                      <div>
-                        <span className="text-gray-600 text-xs">Satisfaction:</span>
-                        <div className="font-semibold text-blue-700">{selectedBank.satisfactionRate}%</div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+            <CardContent className="space-y-8">
+              {/* Bank Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                  <div className="text-2xl font-bold text-blue-600">{selectedBank.averageRecovery}</div>
+                  <div className="text-sm text-gray-600">Recovery Rate</div>
+                </div>
+                <div className="text-center p-4 bg-green-50 rounded-lg">
+                  <div className="text-2xl font-bold text-green-600">₹{selectedBank.minPayment}</div>
+                  <div className="text-sm text-gray-600">Min Payment</div>
+                </div>
+                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                  <div className="text-2xl font-bold text-purple-600">{selectedBank.activeUsers}</div>
+                  <div className="text-sm text-gray-600">Active Users</div>
+                </div>
+                <div className="text-center p-4 bg-orange-50 rounded-lg">
+                  <div className="text-2xl font-bold text-orange-600">{selectedBank.satisfactionRate}%</div>
+                  <div className="text-sm text-gray-600">Satisfaction</div>
+                </div>
+              </div>
 
-                {/* Example Scenario with progress */}
-                <motion.div 
-                  className="p-4 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-lg"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="font-medium text-red-800 mb-3 flex items-center gap-2">
-                    <Target className="size-4" />
-                    Example Scenario
-                  </h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm mb-3">
-                    <div>
-                      <span className="text-gray-600">Original Loan:</span>
-                      <div className="font-semibold text-red-700">₹50,000</div>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Outstanding:</span>
-                      <div className="font-semibold text-red-700">₹32,000</div>
-                    </div>
-                  </div>
-                  <div className="mb-2 text-xs text-gray-600">Progress towards clearance:</div>
-                  <Progress value={64} className="h-2" />
-                  <div className="text-xs text-gray-600 mt-1">64% cleared (₹18,000 paid)</div>
-                </motion.div>
-
-                {/* Payment Options with enhanced UI */}
-                <div className="space-y-4">
-                  <h4 className="font-medium text-gray-900 flex items-center gap-2">
-                    <Zap className="size-4 text-yellow-500" />
-                    Choose Your Payment Plan:
-                  </h4>
-                  
-                  <div className="grid gap-3">
-                    {[
-                      { 
-                        id: 'daily', 
-                        title: 'Daily Payment', 
-                        amount: Math.max(selectedBank.minPayment, 100), 
-                        period: 'day', 
-                        timeline: '~11 months',
-                        recommended: true,
-                        color: 'green'
-                      },
-                      { 
-                        id: 'weekly', 
-                        title: 'Weekly Payment', 
-                        amount: Math.max(selectedBank.minPayment * 7, 700), 
-                        period: 'week', 
-                        timeline: '~11 months',
-                        recommended: false,
-                        color: 'blue'
-                      },
-                      { 
-                        id: 'monthly', 
-                        title: 'Monthly Payment', 
-                        amount: Math.max(selectedBank.minPayment * 30, 2800), 
-                        period: 'month', 
-                        timeline: '~11 months',
-                        recommended: false,
-                        color: 'purple'
-                      }
-                    ].map((option) => (
-                      <motion.div 
-                        key={option.id}
-                        className={`flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all duration-300 ${
-                          selectedPayment === option.id 
-                            ? `bg-${option.color}-50 border-${option.color}-200 shadow-lg` 
-                            : 'hover:bg-gray-50 border-gray-200'
-                        }`} 
-                        onClick={() => setSelectedPayment(option.id)}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+              {/* Payment Options */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-gray-900">Choose Your Payment Plan</h3>
+                
+                <div className="grid md:grid-cols-3 gap-4">
+                  {['daily', 'weekly', 'monthly'].map((plan) => (
+                    <motion.div
+                      key={plan}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Card
+                        className={`cursor-pointer border-2 transition-all ${
+                          selectedPayment === plan
+                            ? 'border-blue-500 bg-blue-50'
+                            : 'border-gray-200 hover:border-blue-300'
+                        }`}
+                        onClick={() => setSelectedPayment(plan)}
                       >
-                        <div className="flex items-center gap-3">
-                          <motion.input 
-                            type="radio" 
-                            name="payment" 
-                            id={option.id} 
-                            className={`text-${option.color}-600`}
-                            checked={selectedPayment === option.id}
-                            onChange={() => setSelectedPayment(option.id)}
-                            whileHover={{ scale: 1.1 }}
-                          />
-                          <label htmlFor={option.id} className="cursor-pointer">
-                            <div className="font-medium flex items-center gap-2">
-                              {option.title}
-                              {option.recommended && (
-                                <motion.span
-                                  animate={{ scale: [1, 1.1, 1] }}
-                                  transition={{ duration: 2, repeat: Infinity }}
-                                  className="text-xs text-green-600"
-                                >
-                                  ⭐
-                                </motion.span>
-                              )}
-                            </div>
-                            <div className="text-sm text-gray-600">
-                              ₹{option.amount}/{option.period} • Clear in {option.timeline}
-                            </div>
-                          </label>
-                        </div>
-                        {option.recommended && (
-                          <Badge variant="secondary" className="bg-green-100 text-green-700 font-medium">
-                            Recommended
-                          </Badge>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
+                        <CardContent className="p-4 text-center">
+                          <div className="font-semibold capitalize mb-2">{plan} Payments</div>
+                          <div className="text-sm text-gray-600">
+                            {plan === 'daily' && 'Minimum ₹5/day'}
+                            {plan === 'weekly' && 'Minimum ₹35/week'}
+                            {plan === 'monthly' && 'Minimum ₹150/month'}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
                 </div>
 
-                {/* Custom Amount with visual feedback */}
-                <motion.div 
-                  className="space-y-3"
-                  whileHover={{ scale: 1.01 }}
-                >
-                  <h4 className="font-medium text-gray-900">Or Enter Custom Amount (Min: ₹{selectedBank.minPayment}):</h4>
-                  <div className="flex gap-2">
-                    <Input 
-                      placeholder={`Enter amount (min ₹${selectedBank.minPayment})...`}
-                      className="flex-1 border-2 focus:border-blue-400" 
-                      value={customAmount}
-                      onChange={(e) => setCustomAmount(e.target.value)}
-                      type="number"
-                      min={selectedBank.minPayment}
-                    />
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Button variant="outline" onClick={handleCalculate}>
-                        Calculate
-                      </Button>
-                    </motion.div>
-                  </div>
-                  {customAmount && parseInt(customAmount) >= selectedBank.minPayment && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="p-3 bg-blue-50 rounded-lg border border-blue-200"
-                    >
-                      <div className="text-sm text-blue-700">
-                        Estimated clearance: <span className="font-bold">
-                          {Math.ceil(32000 / parseInt(customAmount))} payments
-                        </span>
-                      </div>
-                    </motion.div>
-                  )}
-                </motion.div>
+                <div className="space-y-4">
+                  <Label htmlFor="amount">Enter Your Payment Amount</Label>
+                  <Input
+                    id="amount"
+                    type="number"
+                    placeholder="Enter amount in ₹"
+                    value={customAmount}
+                    onChange={(e) => setCustomAmount(e.target.value)}
+                    className="text-center text-lg"
+                  />
+                </div>
 
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button 
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg py-3" 
-                    onClick={handleStartRepayment}
+                <div className="flex gap-4">
+                  <Button
+                    onClick={handleCalculate}
+                    variant="outline"
+                    className="flex-1"
                   >
-                    Start Repayment with {selectedBank.shortName}
-                    <motion.div
-                      className="ml-2"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight className="size-4" />
-                    </motion.div>
+                    <Calculator className="size-4 mr-2" />
+                    Calculate Timeline
                   </Button>
-                </motion.div>
-              </CardContent>
-            </Card>
-
-            {/* Benefits with animations */}
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-            >
-              <Card className="p-6 bg-gradient-to-br from-green-50 to-blue-50 border-0 shadow-xl">
-                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Award className="size-5 text-yellow-500" />
-                  Why Choose {selectedBank.name}?
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    `Minimum payment as low as ₹${selectedBank.minPayment}/day`,
-                    `${selectedBank.averageRecovery} average recovery rate`,
-                    `Trusted by ${selectedBank.activeUsers} users`,
-                    `Real-time updates to bank's system`,
-                    `${selectedBank.satisfactionRate}% customer satisfaction rate`
-                  ].map((benefit, index) => (
-                    <motion.div 
-                      key={index}
-                      className="flex items-center gap-3 text-sm"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                    >
-                      <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                      >
-                        <CheckCircle className="size-4 text-green-600 flex-shrink-0" />
-                      </motion.div>
-                      <span>{benefit}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-          </motion.div>
-
-          {/* Features Grid */}
-          <motion.div 
-            className="space-y-6"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-              <Star className="size-6 text-yellow-500" />
-              Platform Features
-            </h3>
-            
-            <div className="grid gap-4">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                >
-                  <Card className="p-4 hover:shadow-lg transition-all duration-300 border-2 border-gray-100">
-                    <div className="flex items-start gap-4">
-                      <motion.div 
-                        className={`p-3 bg-${feature.color}-100 rounded-lg flex-shrink-0`}
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: index }}
-                      >
-                        <feature.icon className={`size-5 text-${feature.color}-600`} />
-                      </motion.div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
-                        <p className="text-sm text-gray-600">{feature.description}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bank Integration */}
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-            >
-              <Card className="p-6 bg-white border-2 border-blue-100 shadow-lg">
-                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <Building2 className="size-5 text-blue-600" />
-                  Bank Integration - {selectedBank.name}
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  Direct integration with {selectedBank.name} systems for real-time NPA tracking and recovery updates.
-                </p>
-                <div className="flex gap-3">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <Button
+                    onClick={handleStartRepayment}
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
                   >
-                    <Button variant="outline" size="sm" onClick={handleBankLogin}>
-                      {selectedBank.shortName} Login
-                    </Button>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button variant="outline" size="sm" onClick={handleIntegrationGuide}>
-                      Integration Guide
-                    </Button>
-                  </motion.div>
+                    Start NPA Repayment
+                    <ArrowRight className="size-4 ml-2" />
+                  </Button>
                 </div>
-              </Card>
-            </motion.div>
+              </div>
 
-            {/* Success Stories */}
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-            >
-              <Card className="p-6 bg-gradient-to-br from-yellow-50 to-orange-50 border-0 shadow-xl">
-                <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Star className="size-5 text-yellow-600" />
-                  Success Stories - {selectedBank.name}
-                </h4>
-                <div className="space-y-4">
-                  {[
-                    {
-                      quote: `Started with ₹${selectedBank.minPayment * 5}/day payments at ${selectedBank.shortName}. Cleared my ₹15,000 loan in 8 months!`,
-                      author: "Rajesh K., Small Trader, Kerala"
-                    },
-                    {
-                      quote: `${selectedBank.name}'s flexible system helped me pay weekly. No more stress about lump sum EMIs.`,
-                      author: "Priya S., Daily Wage Worker, Tamil Nadu"
-                    }
-                  ].map((story, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.2 }}
-                    >
-                      <blockquote className="text-sm text-gray-700 italic mb-2">
-                        "{story.quote}"
-                      </blockquote>
-                      <div className="text-xs text-gray-600">- {story.author}</div>
-                    </motion.div>
-                  ))}
+              {/* Additional Actions */}
+              <div className="border-t pt-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Button
+                    onClick={handleBankLogin}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    <Building2 className="size-4 mr-2" />
+                    Bank Login Portal
+                  </Button>
+                  <Button
+                    onClick={handleIntegrationGuide}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    <Shield className="size-4 mr-2" />
+                    Integration Guide
+                  </Button>
                 </div>
-              </Card>
-            </motion.div>
-          </motion.div>
-        </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );

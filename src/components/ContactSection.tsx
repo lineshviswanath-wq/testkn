@@ -462,94 +462,89 @@ export function ContactSection() {
               </p>
             </div>
 
-            {/* Primary Contact Cards - Enhanced Layout */}
-            <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              {contactChannels.slice(0, 3).map((channel, index) => (
+            {/* Primary Contact Cards - DUBBAPAY Style */}
+            <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+              {contactChannels.map((channel, index) => (
                 <motion.div
                   key={channel.title}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.9 + index * 0.2 }}
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  className="group"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.9 + index * 0.1 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="cursor-pointer"
                 >
-                  <Card className="relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 h-full">
-                    {/* Dynamic gradient background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${channel.gradient} opacity-95`} />
-                    
-                    {/* Animated background elements */}
+                  <Card 
+                    className={`p-4 bg-gradient-to-r ${channel.bgGradient} border-2 hover:shadow-lg transition-all duration-300 relative overflow-hidden touch-manipulation`}
+                    style={{
+                      borderColor: channel.title.includes('Phone') ? 'rgba(34, 197, 94, 0.3)' : 
+                                  channel.title.includes('Email') ? 'rgba(59, 130, 246, 0.3)' :
+                                  channel.title.includes('WhatsApp') ? 'rgba(16, 185, 129, 0.3)' :
+                                  'rgba(168, 85, 247, 0.3)'
+                    }}
+                    onClick={() => window.open(channel.action, '_blank')}
+                  >
                     <motion.div
-                      className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"
-                      animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      className={`absolute top-0 right-0 w-12 h-12 opacity-10 rounded-full -mr-6 -mt-6`}
+                      style={{
+                        background: channel.title.includes('Phone') ? 'rgba(34, 197, 94, 0.4)' : 
+                                   channel.title.includes('Email') ? 'rgba(59, 130, 246, 0.4)' :
+                                   channel.title.includes('WhatsApp') ? 'rgba(16, 185, 129, 0.4)' :
+                                   'rgba(168, 85, 247, 0.4)'
+                      }}
+                      animate={{ rotate: channel.title.includes('Email') ? -360 : 360 }}
+                      transition={{ 
+                        duration: channel.title.includes('WhatsApp') ? 12 : 
+                                 channel.title.includes('Partnership') ? 20 : 15, 
+                        repeat: Infinity, 
+                        ease: "linear" 
+                      }}
                     />
-                    <motion.div
-                      className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"
-                      animate={{ rotate: -360, scale: [1, 1.3, 1] }}
-                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    />
-                    
-                    <div className="relative z-10 p-8 text-white h-full flex flex-col">
-                      {/* Header with icon and response time */}
-                      <div className="flex items-start justify-between mb-6">
-                        <motion.div
-                          className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300"
-                          whileHover={{ rotate: 15 }}
+                    <div className="flex items-center gap-3 relative z-10">
+                      <motion.div 
+                        className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${channel.gradient} rounded-xl flex items-center justify-center shadow-lg`}
+                        animate={{ 
+                          scale: [1, 1.05, 1],
+                        }}
+                        transition={{ 
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.1
+                        }}
+                      >
+                        <channel.icon className="w-5 h-5 text-white" />
+                      </motion.div>
+                      <div className="min-w-0 flex-1">
+                        <div 
+                          className="text-xs uppercase tracking-wide font-medium"
+                          style={{
+                            color: channel.title.includes('Phone') ? '#059669' : 
+                                   channel.title.includes('Email') ? '#2563EB' :
+                                   channel.title.includes('WhatsApp') ? '#059669' :
+                                   '#7C3AED'
+                          }}
                         >
-                          <channel.icon className="w-8 h-8 text-white" />
-                        </motion.div>
-                        
-                        <motion.div
-                          className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium"
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+                          {channel.title.includes('Phone') ? '24/7 HELPLINE' :
+                           channel.title.includes('Email') ? 'EMAIL SUPPORT' :
+                           channel.title.includes('WhatsApp') ? 'WHATSAPP CHAT' :
+                           'PARTNERSHIPS'}
+                        </div>
+                        <div className="font-bold text-gray-900 text-base">{channel.primary}</div>
+                        <div 
+                          className="text-xs"
+                          style={{
+                            color: channel.title.includes('Phone') ? '#059669' : 
+                                   channel.title.includes('Email') ? '#2563EB' :
+                                   channel.title.includes('WhatsApp') ? '#059669' :
+                                   '#7C3AED'
+                          }}
                         >
-                          ⚡ {channel.responseTime}
-                        </motion.div>
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-3">{channel.title}</h3>
-                        <p className="text-white/90 mb-6 leading-relaxed">{channel.description}</p>
-                        
-                        {/* Contact details */}
-                        <div className="space-y-4 mb-8">
-                          <div className="flex items-center justify-between bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                            <span className="font-bold text-lg">{channel.primary}</span>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              onClick={() => handleCopyEmail(channel.primary)}
-                              className="text-white hover:bg-white/20 p-2"
-                            >
-                              {copiedEmail === channel.primary ? (
-                                <CheckCircle className="w-5 h-5 text-green-300" />
-                              ) : (
-                                <Copy className="w-5 h-5" />
-                              )}
-                            </Button>
-                          </div>
-                          <div className="flex items-center gap-3 text-white/80">
-                            <Clock className="w-5 h-5" />
-                            <span className="font-medium">{channel.secondary}</span>
-                          </div>
+                          {channel.responseTime === 'Instant' ? 'Instant Support' :
+                           channel.responseTime === '< 6 hours' ? '< 6 hours response' :
+                           channel.responseTime === '< 15 mins' ? 'Quick Support' :
+                           'Strategic Alliances'}
                         </div>
                       </div>
-                      
-                      {/* Action button */}
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Button 
-                          className="w-full bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-sm font-bold py-3 text-lg"
-                          onClick={() => window.open(channel.action, '_blank')}
-                        >
-                          Contact Now
-                          <ArrowRight className="w-5 h-5 ml-2" />
-                        </Button>
-                      </motion.div>
                     </div>
                   </Card>
                 </motion.div>
