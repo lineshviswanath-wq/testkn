@@ -16,7 +16,8 @@ import {
   Mail,
   MapPin,
   Star,
-  Smartphone
+  Smartphone,
+  Target
 } from "lucide-react";
 import { NavigationContext } from "../App";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -67,7 +68,7 @@ export function AboutSection() {
       id: 'dabbasavepay',
       name: 'DABBA PAY & SAVE',
       subtitle: 'Complete Financial Solution',
-      description: 'Save small amounts in your digital Dubba and let it auto-manage loan repayments or power your personal goals. Coming soon: smart marketplace partnerships for convenient, personalized options.',
+      description: 'Save small amounts in your digital DABBA and let it auto-manage loan repayments or power your personal goals. Coming soon: smart marketplace partnerships for convenient, personalized options.',
       icon: Smartphone,
       gradient: 'from-orange-500 via-red-500 to-pink-500',
       bgGradient: 'from-orange-50 via-red-50 to-pink-50',
@@ -241,7 +242,7 @@ export function AboutSection() {
                   </span>
                 </motion.div>
                 
-                {/* Enhanced OneDubba Introduction Caption */}
+                {/* Enhanced OneDABBA Introduction Caption */}
                 <motion.div 
                   className="mb-12 relative"
                   initial={{ opacity: 0, y: 30 }}
@@ -408,19 +409,214 @@ export function AboutSection() {
                   </motion.div>
                 </motion.div>
                 
-                <motion.p 
-                  className="text-xl text-gray-700 leading-relaxed mb-10"
+                {/* Enhanced OneDABBA Description with Visual Elements */}
+                <motion.div 
+                  className="mb-12 space-y-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  OneDABBA brings back the trusted idea of the traditional "dabba" savings box in a modern, digital form. 
-                  It is designed to help individuals and families manage money better in two simple ways. First, it allows 
-                  you to save small amounts regularly—turning daily deposits into meaningful funds for your personal goals. 
-                  Second, for those struggling with heavy EMIs or unmanageable repayments, OneDABBA partners with banks to 
-                  make loan repayments easier by breaking them into smaller, flexible amounts. All your savings and repayments 
-                  stay organized in one place, giving you control, discipline, and peace of mind.
-                </motion.p>
+                  {/* Main Introduction */}
+                  <motion.div 
+                    className="relative p-6 rounded-2xl bg-gradient-to-r from-blue-50 via-green-50 to-purple-50 border border-gray-200 shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.div
+                      className="absolute -top-1 -left-1 w-4 h-4 bg-gradient-to-br from-[#1E4A72] to-[#22C55E] rounded-full"
+                      animate={{ scale: [1, 1.2, 1], rotate: 360 }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <p className="text-lg text-gray-800 leading-relaxed">
+                      <span className="bg-gradient-to-r from-[#1E4A72] via-[#22C55E] to-purple-600 bg-clip-text text-transparent font-bold">OneDABBA</span> brings back the trusted idea of the traditional{" "}
+                      <span className="px-2 py-1 bg-gradient-to-r from-orange-100 to-amber-100 rounded-lg font-semibold text-orange-800">"dabba" savings box</span>{" "}
+                      in a modern, digital form. It is designed to help individuals and families{" "}
+                      <span className="px-2 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-lg font-semibold text-green-800">manage money better</span>{" "}
+                      in three simple ways.
+                    </p>
+                  </motion.div>
+
+                  {/* Three Ways Section */}
+                  <div className="space-y-6">
+                    {/* First Way - Savings */}
+                    <motion.div
+                      className="relative p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 shadow-md group hover:shadow-xl transition-all duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <motion.div
+                        className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        1
+                      </motion.div>
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </motion.div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-green-800 mb-2">Micro Deposits</h4>
+                          <p className="text-green-700 leading-relaxed">
+                            It allows you to{" "}
+                            <span className="px-2 py-1 bg-green-200 rounded-md font-semibold">save small amounts regularly</span>
+                            —turning daily deposits into{" "}
+                            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent font-bold">meaningful funds</span>{" "}
+                            for your personal goals.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Second Way - Loan Repayments */}
+                    <motion.div
+                      className="relative p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 shadow-md group hover:shadow-xl transition-all duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.8 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <motion.div
+                        className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg"
+                        animate={{ rotate: [0, -10, 10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        2
+                      </motion.div>
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center"
+                          whileHover={{ scale: 1.1, rotate: -5 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <CreditCard className="w-6 h-6 text-white" />
+                        </motion.div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-blue-800 mb-2">Due Loan Flexible Repayments</h4>
+                          <p className="text-blue-700 leading-relaxed">
+                            For those struggling with{" "}
+                            <span className="px-2 py-1 bg-red-100 rounded-md font-semibold text-red-700">heavy EMIs</span>, 
+                            OneDABBA{" "}
+                            <span className="px-2 py-1 bg-blue-200 rounded-md font-semibold">partners with banks</span>{" "}
+                            to make loan repayments easier by breaking them into{" "}
+                            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold">smaller, flexible amounts</span>.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Third Way - Achieve Goals */}
+                    <motion.div
+                      className="relative p-6 rounded-xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 shadow-md group hover:shadow-xl transition-all duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 1.0 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <motion.div
+                        className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg"
+                        animate={{ rotate: [0, -10, 10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        3
+                      </motion.div>
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <Target className="w-6 h-6 text-white" />
+                        </motion.div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-orange-800 mb-2">Achieve Goals</h4>
+                          <p className="text-orange-700 leading-relaxed">
+                            Use your savings to directly{" "}
+                            <span className="px-2 py-1 bg-orange-200 rounded-md font-semibold">pay for and procure</span>{" "}
+                            desired items, tours, or services through our{" "}
+                            <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent font-bold">partner network</span>
+                            —often at{" "}
+                            <span className="px-2 py-1 bg-yellow-200 rounded-md font-semibold text-yellow-800">exclusive benefits and discounts</span>.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Final Benefits Section */}
+                  <motion.div
+                    className="relative p-6 rounded-2xl bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50 border border-purple-200 shadow-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    {/* Decorative elements */}
+                    <motion.div
+                      className="absolute top-2 right-2 w-3 h-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-60"
+                      animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <motion.div
+                      className="absolute bottom-2 left-2 w-2 h-2 bg-gradient-to-br from-orange-400 to-red-500 rounded-full opacity-60"
+                      animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    />
+                    
+                    <div className="flex items-center gap-4 mb-4">
+                      <motion.div
+                        className="w-14 h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl flex items-center justify-center"
+                        whileHover={{ scale: 1.1, rotate: 10 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Heart className="w-7 h-7 text-white" />
+                      </motion.div>
+                      <div>
+                        <h4 className="text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
+                          Complete Control & Peace of Mind
+                        </h4>
+                        <p className="text-sm text-gray-600">Everything organized in one place</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      <motion.span
+                        className="px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full text-purple-700 font-semibold text-sm border border-purple-200"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        All savings organized
+                      </motion.span>
+                      <motion.span
+                        className="px-4 py-2 bg-gradient-to-r from-pink-100 to-orange-100 rounded-full text-pink-700 font-semibold text-sm border border-pink-200"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Complete control
+                      </motion.span>
+                      <motion.span
+                        className="px-4 py-2 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full text-orange-700 font-semibold text-sm border border-orange-200"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Financial discipline
+                      </motion.span>
+                      <motion.span
+                        className="px-4 py-2 bg-gradient-to-r from-green-100 to-teal-100 rounded-full text-green-700 font-semibold text-sm border border-green-200"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Peace of mind
+                      </motion.span>
+                    </div>
+                  </motion.div>
+                </motion.div>
                 
                 {/* New colorful feature highlights */}
                 <motion.div 

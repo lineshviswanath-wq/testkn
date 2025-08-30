@@ -75,39 +75,39 @@ export function Header() {
 
           <button 
             onClick={() => handleNavClick('dabbasave')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
           >
-            DABBA SAVE
+            Dabba Save
           </button>
 
           <button 
             onClick={() => handleNavClick('dabbapay')}
-            className="text-gray-600 hover:text-green-600 transition-colors"
+            className="text-gray-700 hover:text-green-600 transition-colors font-medium"
           >
-            DABBA PAY
+            Dabba Pay
           </button>
 
           <button 
             onClick={() => handleNavClick('dabbasavepay')}
-            className="text-gray-600 hover:text-purple-600 transition-colors"
+            className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
           >
-            DABBA SAVE & PAY
+            Dabba Save & Pay
           </button>
 
           <button 
             onClick={() => handleNavClick('fintx-studio')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
           >
-            FINTX STUDIO
+            Fintx Studio
           </button>
 
 
 
           <button 
             onClick={() => handleNavClick('contact')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
           >
-            CONTACT
+            Contact
           </button>
         </nav>
 
@@ -162,9 +162,9 @@ export function Header() {
                 handleNavClick('dabbasave');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
-              DABBA SAVE
+              Dabba Save
             </button>
 
             <button 
@@ -172,9 +172,9 @@ export function Header() {
                 handleNavClick('dabbapay');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-green-600 transition-colors"
+              className="block text-gray-700 hover:text-green-600 transition-colors font-medium"
             >
-              DABBA PAY
+              Dabba Pay
             </button>
 
             <button 
@@ -182,9 +182,9 @@ export function Header() {
                 handleNavClick('dabbasavepay');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-purple-600 transition-colors"
+              className="block text-gray-700 hover:text-purple-600 transition-colors font-medium"
             >
-              DABBA SAVE & PAY
+              Dabba Save & Pay
             </button>
 
             <button 
@@ -192,9 +192,9 @@ export function Header() {
                 handleNavClick('fintx-studio');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
-              FINTX STUDIO
+              Fintx Studio
             </button>
 
 
@@ -204,9 +204,9 @@ export function Header() {
                 handleNavClick('contact');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
-              CONTACT
+              Contact
             </button>
 
             {/* Mobile Customer Care */}
