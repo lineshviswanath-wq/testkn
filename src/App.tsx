@@ -53,6 +53,11 @@ export default function App() {
     setNavigationState(prev => ({ ...prev, ...newState }));
   };
 
+  // Auto-scroll to top whenever the current view changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [navigation.currentView]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {

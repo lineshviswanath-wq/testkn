@@ -24,37 +24,21 @@ export function Header() {
   }, [showMobileMenu]);
 
   const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'fintx-studio' | 'about' | 'contact' | 'dabbasave' | 'dabbapay' | 'dabbasavepay') => {
-    if (view === 'home') {
-      setNavigation({ currentView: view });
-      // If we're on home page, scroll to top
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'dabbasave') {
-      // Navigate to dabbasave page
-      setNavigation({ currentView: 'dabbasave' });
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'dabbapay') {
-      // Navigate to dabbapay page
-      setNavigation({ currentView: 'dabbapay' });
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'dabbasavepay') {
-      // Navigate to combined dabbasavepay page
-      setNavigation({ currentView: 'dabbasavepay' });
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-    } else if (view === 'deposits' && navigation.currentView === 'home') {
+    if (view === 'deposits' && navigation.currentView === 'home') {
       // If on home page, scroll to deposits section
       scrollToSection('deposits');
     } else if (view === 'repayments' && navigation.currentView === 'home') {
       // If on home page, scroll to repayments section
       scrollToSection('repayments');
     } else {
-      // Navigate to dedicated page
+      // Navigate to page (scroll-to-top is handled automatically by App.tsx)
       setNavigation({ currentView: view });
     }
   };
 
   const handleLogoClick = () => {
+    // Navigate to about page (scroll-to-top is handled automatically by App.tsx)
     setNavigation({ currentView: 'about' });
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
   const handleLoginClick = () => {

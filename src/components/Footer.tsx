@@ -8,8 +8,8 @@ export function Footer() {
   const { setNavigation } = useContext(NavigationContext);
 
   const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'fintx-studio' | 'about' | 'contact' | 'dabbasave' | 'dabbapay' | 'dabbasavepay') => {
+    // Navigate to page (scroll-to-top is handled automatically by App.tsx)
     setNavigation({ currentView: view });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
