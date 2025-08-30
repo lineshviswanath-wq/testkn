@@ -40,7 +40,7 @@ const npaPartnerBanks = [
     averageRecovery: "73%",
     minPayment: 10,
     popular: true,
-    description: "India's largest public sector bank with comprehensive NPA recovery programs",
+    description: "India's largest public sector bank with comprehensive micro repayment programs",
     recoveryTrend: "+5.2%",
     satisfactionRate: 88
   },
@@ -54,7 +54,7 @@ const npaPartnerBanks = [
     averageRecovery: "81%",
     minPayment: 25,
     popular: true,
-    description: "Leading private sector bank with digital-first NPA resolution",
+    description: "Leading private sector bank with digital-first micro repayment solutions",
     recoveryTrend: "+7.1%",
     satisfactionRate: 92
   },
@@ -68,7 +68,7 @@ const npaPartnerBanks = [
     averageRecovery: "68%",
     minPayment: 5,
     popular: false,
-    description: "Focused on rural and semi-urban NPA recovery with flexible payment options",
+    description: "Focused on rural and semi-urban due loan recovery with micro repayment options",
     recoveryTrend: "+3.8%",
     satisfactionRate: 85
   },
@@ -82,7 +82,7 @@ const npaPartnerBanks = [
     averageRecovery: "70%",
     minPayment: 15,
     popular: false,
-    description: "Public sector bank with strong presence in agricultural NPAs",
+    description: "Public sector bank with strong presence in agricultural due loans",
     recoveryTrend: "+4.3%",
     satisfactionRate: 82
   },
@@ -96,7 +96,7 @@ const npaPartnerBanks = [
     averageRecovery: "79%",
     minPayment: 20,
     popular: true,
-    description: "Technology-driven NPA management with 24/7 payment options",
+    description: "Technology-driven due loan management with 24/7 payment options",
     recoveryTrend: "+6.5%",
     satisfactionRate: 90
   },
@@ -110,7 +110,7 @@ const npaPartnerBanks = [
     averageRecovery: "65%",
     minPayment: 10,
     popular: false,
-    description: "Traditional public sector bank with personalized NPA recovery support",
+    description: "Traditional public sector bank with personalized due loan recovery support",
     recoveryTrend: "+2.9%",
     satisfactionRate: 79
   }
@@ -125,7 +125,7 @@ const successStories = [
     recoveredAmount: "₹18,500",
     timeline: "14 months",
     dailyPayment: "₹50",
-    quote: "Started with ₹50/day through DigiDabba. SBI's flexible system helped me clear most of my dues!",
+    quote: "Started with ₹50/day through DABBA PAY. SBI's flexible system helped me clear most of my dues!",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
     improvementScore: "+180 points"
   },
@@ -205,7 +205,7 @@ export function NPARepaymentSection() {
 
   const handleCalculate = () => {
     if (customAmount) {
-      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the NPA.`);
+      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the due loan.`);
     } else {
       alert('Please enter an amount to calculate.');
     }
@@ -325,7 +325,7 @@ export function NPARepaymentSection() {
               >
                 <CreditCard className="size-5" />
               </motion.div>
-              <span className="font-bold text-lg">DIGIDABBA NPA Repayment Platform</span>
+              <span className="font-bold text-lg">DABBA PAY Micro Repayments - Due Loans Platform</span>
             </motion.div>
             
             <motion.h2 
@@ -335,7 +335,7 @@ export function NPARepaymentSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#1E4A72]">End NPA Stress!</span> 
+              <span className="text-[#1E4A72]">End Due Loan Stress!</span> 
               <span className="text-[#22C55E]"> Choose Your Bank</span>
             </motion.h2>
             
@@ -351,9 +351,9 @@ export function NPARepaymentSection() {
                 <span className="text-[#1E4A72] font-bold"> just ₹5/day!</span>
               </p>
               <p className="text-lg text-gray-600">
-                Choose your bank and start flexible NPA repayment. With India's 
+                Choose your bank and start Micro Repayment for Due Loans. With India's 
                 <span className="font-semibold text-[#1E4A72]"> major banks </span> offering 
-                <span className="font-bold text-[#22C55E]"> dedicated NPA recovery programs!</span>
+                <span className="font-bold text-[#22C55E]"> dedicated micro repayment programs!</span>
               </p>
             </motion.div>
           </motion.div>
@@ -558,7 +558,7 @@ export function NPARepaymentSection() {
                         whileHover={{ backgroundColor: "#F9FAFB" }}
                       >
                         <IndianRupee className="size-4 text-red-500" />
-                        <span>Total NPAs: {bank.totalNPAs}</span>
+                        <span>Total Due Loans: {bank.totalNPAs}</span>
                       </motion.div>
                       <motion.div 
                         className="flex items-center gap-2 text-sm text-gray-600 p-2 bg-gray-50 rounded-lg"
@@ -683,7 +683,7 @@ export function NPARepaymentSection() {
             viewport={{ once: true }}
           >
             <Card className="p-8 bg-gradient-to-r from-blue-50 to-green-50 border-0 shadow-xl max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Choose DIGIDABBA for NPA Recovery?</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Choose DABBA PAY for Micro Repayments - Due Loans?</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {features.map((feature, index) => (
                   <motion.div

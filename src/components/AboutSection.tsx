@@ -16,7 +16,6 @@ import {
   Mail,
   MapPin,
   Star,
-  Download,
   Smartphone
 } from "lucide-react";
 import { NavigationContext } from "../App";
@@ -29,7 +28,7 @@ export function AboutSection() {
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
   const y2 = useTransform(scrollY, [0, 300], [0, 50]);
 
-  const handleProductClick = (product: 'dabbasave' | 'dabbapay' | 'fintx-studio') => {
+  const handleProductClick = (product: 'dabbasave' | 'dabbapay' | 'dabbasavepay' | 'fintx-studio') => {
     setNavigation({ currentView: product });
   };
 
@@ -45,7 +44,7 @@ export function AboutSection() {
     {
       id: 'dabbasave',
       name: 'DABBA SAVE',
-      subtitle: 'Micro Savings & Deposits',
+      subtitle: 'Micro Deposit',
       description: 'A comprehensive marketplace for small-ticket savings across multiple partner banks, enabling financial inclusion starting from just ₹10/day.',
       icon: TrendingUp,
       gradient: 'from-emerald-500 via-green-500 to-teal-500',
@@ -56,13 +55,24 @@ export function AboutSection() {
     {
       id: 'dabbapay',
       name: 'DABBA PAY',
-      subtitle: 'NPA Repayments & Loans',
+      subtitle: 'Micro Repay for Due Loans',
       description: 'Flexible daily/weekly repayment solutions for overdue loans, helping customers improve credit scores while reducing financial stress.',
       icon: CreditCard,
       gradient: 'from-blue-500 via-indigo-500 to-purple-500',
       bgGradient: 'from-blue-50 via-indigo-50 to-purple-50',
       features: ['Flexible payments', 'Credit score improvement', 'Reduced penalties', 'Stress-free repayment'],
       color: 'blue'
+    },
+    {
+      id: 'dabbasavepay',
+      name: 'DABBA PAY & SAVE',
+      subtitle: 'Complete Financial Solution',
+      description: 'Save small amounts in your digital Dubba and let it auto-manage loan repayments or power your personal goals. Coming soon: smart marketplace partnerships for convenient, personalized options.',
+      icon: Smartphone,
+      gradient: 'from-orange-500 via-red-500 to-pink-500',
+      bgGradient: 'from-orange-50 via-red-50 to-pink-50',
+      features: ['All-in-one platform', 'Savings + Payments', 'Complete financial control', 'Unified experience'],
+      color: 'orange'
     },
     {
       id: 'fintx-studio',
@@ -231,20 +241,172 @@ export function AboutSection() {
                   </span>
                 </motion.div>
                 
-                <motion.h1 
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
-                  initial={{ opacity: 0, y: 20 }}
+                {/* Enhanced OneDubba Introduction Caption */}
+                <motion.div 
+                  className="mb-12 relative"
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
+                  transition={{ duration: 1, delay: 0.1 }}
                 >
-                  <span className="bg-gradient-to-r from-purple-600 via-pink-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                    Empowering Financial
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
-                    Inclusion Through Innovation
-                  </span>
-                </motion.h1>
+                  {/* Decorative background elements */}
+                  <motion.div
+                    className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-green-500/10 to-purple-500/10 rounded-3xl blur-xl"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                      rotate: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  {/* Main caption container */}
+                  <motion.div 
+                    className="relative z-10 text-center lg:text-left"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {/* Main heading with stunning effects */}
+                    <motion.h1 
+                      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] relative"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                      {/* Kaniro Introducing text */}
+                      <motion.div 
+                        className="block mb-2"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                      >
+                        <span className="text-gray-700 font-bold text-xl md:text-2xl lg:text-3xl">
+                          <span className="bg-gradient-to-r from-[#1E4A72] to-[#22C55E] bg-clip-text text-transparent">Kaniro</span> Introducing{" "}
+                        </span>
+                      </motion.div>
+
+                      {/* OneDubba - Main brand name */}
+                      <motion.div 
+                        className="block mb-3 relative"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.4 }}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <span className="relative inline-block">
+                          <span className="bg-gradient-to-r from-[#1E4A72] via-[#22C55E] via-blue-600 to-purple-600 bg-clip-text text-transparent font-black">
+                            OneDubba
+                          </span>
+                          {/* Animated underline */}
+                          <motion.div
+                            className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#1E4A72] via-[#22C55E] to-purple-600 rounded-full"
+                            initial={{ width: 0 }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: 1.2, delay: 0.8 }}
+                          />
+                          {/* Sparkle effects */}
+                          <motion.div
+                            className="absolute -top-2 -right-4 text-yellow-400"
+                            animate={{
+                              scale: [1, 1.3, 1],
+                              rotate: [0, 180, 360],
+                            }}
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          >
+                            <Star className="size-6 fill-current" />
+                          </motion.div>
+                        </span>
+                      </motion.div>
+
+                      {/* Tagline */}
+                      <motion.div 
+                        className="block text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                      >
+                        <span className="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
+                          Redefining Financial Independence
+                        </span>
+                        <br />
+                        <span className="text-gray-700">
+                          for{" "}
+                          <span className="bg-gradient-to-r from-[#22C55E] via-emerald-600 to-teal-600 bg-clip-text text-transparent font-black">
+                            Everyone!
+                          </span>
+                        </span>
+                      </motion.div>
+
+                      {/* Floating decorative elements */}
+                      <motion.div
+                        className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-[#1E4A72]/20 to-[#22C55E]/20 rounded-full blur-xl hidden lg:block"
+                        animate={{
+                          y: [0, -10, 0],
+                          scale: [1, 1.2, 1],
+                          rotate: 360,
+                        }}
+                        transition={{
+                          duration: 6,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                      <motion.div
+                        className="absolute -bottom-4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-lg hidden lg:block"
+                        animate={{
+                          x: [0, 5, 0],
+                          y: [0, -8, 0],
+                          scale: [1, 1.3, 1],
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 1
+                        }}
+                      />
+                    </motion.h1>
+
+                    {/* Success metrics or highlights */}
+                    <motion.div 
+                      className="flex flex-wrap gap-4 justify-center lg:justify-start mt-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 1.0 }}
+                    >
+                      <motion.div
+                        className="flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border border-green-200 shadow-sm"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <CheckCircle className="size-4 text-green-600" />
+                        <span className="text-sm font-semibold text-green-800">Revolutionary Platform</span>
+                      </motion.div>
+                      <motion.div
+                        className="flex items-center gap-2 bg-gradient-to-r from-blue-100 to-indigo-100 px-4 py-2 rounded-full border border-blue-200 shadow-sm"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Heart className="size-4 text-blue-600" />
+                        <span className="text-sm font-semibold text-blue-800">Financial Freedom</span>
+                      </motion.div>
+                      <motion.div
+                        className="flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full border border-purple-200 shadow-sm"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Globe className="size-4 text-purple-600" />
+                        <span className="text-sm font-semibold text-purple-800">For Everyone</span>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
                 
                 <motion.p 
                   className="text-xl text-gray-700 leading-relaxed mb-10"
@@ -252,11 +414,12 @@ export function AboutSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  We aim to bridge critical gaps in India's financial ecosystem by enabling accessible micro-deposits, 
-                  flexible NPA repayments, and intuitive digital-first solutions. Designed to serve urban, rural, and 
-                  household needs alike, our approach ensures inclusivity across every segment of society. By empowering 
-                  individuals, families, and communities with simple yet powerful financial tools, we foster discipline, 
-                  resilience, and long-term growth for all.
+                  OneDABBA brings back the trusted idea of the traditional "dabba" savings box in a modern, digital form. 
+                  It is designed to help individuals and families manage money better in two simple ways. First, it allows 
+                  you to save small amounts regularly—turning daily deposits into meaningful funds for your personal goals. 
+                  Second, for those struggling with heavy EMIs or unmanageable repayments, OneDABBA partners with banks to 
+                  make loan repayments easier by breaking them into smaller, flexible amounts. All your savings and repayments 
+                  stay organized in one place, giving you control, discipline, and peace of mind.
                 </motion.p>
                 
                 {/* New colorful feature highlights */}
@@ -370,8 +533,6 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-
-
           {/* Products Section */}
           <motion.div 
             className="mb-20"
@@ -389,7 +550,7 @@ export function AboutSection() {
                 viewport={{ once: true }}
               >
                 <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
-                  Our Products
+                  Products & Services
                 </span>
               </motion.h2>
               <motion.p 
@@ -399,11 +560,11 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Three innovative solutions designed to transform the Indian financial landscape
+                Four innovative solutions designed to transform the Indian financial landscape
               </motion.p>
             </div>
             
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
               {products.map((product, index) => (
                 <motion.div
                   key={product.id}
@@ -463,38 +624,35 @@ export function AboutSection() {
                         <product.icon className="w-10 h-10 text-white" />
                       </motion.div>
                       
-                      <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                        <p className="text-lg text-gray-700 font-medium mb-3">{product.subtitle}</p>
-                        <p className="text-gray-700 leading-relaxed mb-6">{product.description}</p>
-                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h3>
+                      <p className="text-gray-600 text-sm font-semibold mb-4">{product.subtitle}</p>
+                      <p className="text-gray-700 leading-relaxed mb-6">{product.description}</p>
                       
-                      <ul className="space-y-3 mb-8">
+                      <div className="space-y-3">
                         {product.features.map((feature, idx) => (
-                          <motion.li 
-                            key={idx}
-                            className="flex items-center gap-3 text-gray-700"
-                            initial={{ opacity: 0, x: -10 }}
+                          <motion.div 
+                            key={idx} 
+                            className="flex items-center gap-3"
+                            initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            transition={{ delay: index * 0.1 + idx * 0.1 }}
                             viewport={{ once: true }}
                           >
-                            <CheckCircle className="size-5 text-green-600 flex-shrink-0" />
-                            {feature}
-                          </motion.li>
+                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">{feature}</span>
+                          </motion.div>
                         ))}
-                      </ul>
-
-                      <Button 
-                        className={`w-full bg-gradient-to-r ${product.gradient} hover:opacity-90 group-hover:shadow-lg transition-all duration-300`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleProductClick(product.id as any);
-                        }}
-                      >
-                        Explore {product.name}
-                        <ArrowRight className="size-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      </div>
+                      
+                      <motion.div className="mt-6">
+                        <Button 
+                          className={`w-full bg-gradient-to-r ${product.gradient} text-white hover:scale-105 transition-all duration-300`}
+                          onClick={() => handleProductClick(product.id as any)}
+                        >
+                          Explore {product.name}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Button>
+                      </motion.div>
                     </div>
                   </Card>
                 </motion.div>
@@ -518,7 +676,7 @@ export function AboutSection() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                   Success Stories
                 </span>
               </motion.h2>
@@ -529,7 +687,7 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Real stories from customers who transformed their financial lives with DABBA
+                Real people, real savings, real impact across India
               </motion.p>
             </div>
 
@@ -537,78 +695,83 @@ export function AboutSection() {
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.name}
-                  className="group"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
-                  <Card className="p-8 h-full bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
-                    <motion.div
-                      className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-300/30 to-pink-300/30 rounded-full blur-xl"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: 360,
-                      }}
-                      transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
+                  <Card className="p-8 h-full border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
                     
-                    {/* Colorful accent elements for testimonials */}
-                    <motion.div
-                      className="absolute -top-1 -left-1 w-4 h-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
-                    <motion.div
-                      className="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-70"
-                      animate={{
-                        y: [0, -5, 0],
-                        x: [0, 3, 0],
-                      }}
-                      transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
+                    <blockquote className="text-gray-700 text-lg leading-relaxed mb-6">
+                      "{testimonial.text}"
+                    </blockquote>
                     
-                    <div className="relative z-10">
-                      {/* Rating Stars */}
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                        ))}
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-bold text-gray-900">{testimonial.name}</div>
+                        <div className="text-sm text-gray-600">{testimonial.role}</div>
+                        <div className="text-sm text-gray-500">{testimonial.location}</div>
                       </div>
-                      
-                      <blockquote className="text-gray-700 text-lg leading-relaxed mb-6">
-                        "{testimonial.text}"
-                      </blockquote>
-                      
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="font-bold text-gray-900">{testimonial.name}</div>
-                          <div className="text-sm text-gray-600">{testimonial.role}</div>
-                          <div className="text-sm text-gray-500">{testimonial.location}</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-green-600">{testimonial.savings}</div>
-                          <div className="text-xs text-gray-500">Total Saved</div>
-                        </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-green-600">{testimonial.savings}</div>
+                        <div className="text-xs text-gray-500">saved</div>
                       </div>
                     </div>
                   </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Partner Banks Section */}
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="text-5xl font-bold text-gray-900 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                  Trusted Partners
+                </span>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-700 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Partnered with India's leading banks for your financial security
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {partners.map((partner, index) => (
+                <motion.div
+                  key={partner}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                >
+                  <span className="text-gray-700 font-semibold text-center">{partner}</span>
                 </motion.div>
               ))}
             </div>
@@ -622,90 +785,57 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-12 lg:p-16 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 border-0 shadow-2xl relative overflow-hidden">
-              {/* Background animations */}
-              <motion.div
-                className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              
-              <div className="relative z-10 text-center text-white">
-                <motion.h2 
-                  className="text-4xl lg:text-5xl font-bold mb-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Get in Touch
+            <Card className="p-8 bg-gradient-to-r from-blue-50 to-green-50 border-0 shadow-xl">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                    We're Here to Help
                   </span>
-                </motion.h2>
-                
-                <motion.p 
-                  className="text-xl opacity-90 mb-12 max-w-2xl mx-auto"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  Have questions about our financial solutions? Our team is here to help you on your journey to financial freedom.
-                </motion.p>
+                </h3>
+                <p className="text-gray-700 text-lg">Our customer care team is always ready to assist you</p>
+              </div>
 
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <motion.div 
-                  className="grid md:grid-cols-3 gap-8 mb-12"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
-                      <Phone className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="text-lg font-semibold mb-2">Call Us</div>
-                    <div className="text-blue-300">{customerCareInfo.phone}</div>
-                  </div>
-                  
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-4">
-                      <Mail className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="text-lg font-semibold mb-2">Email Us</div>
-                    <div className="text-purple-300">{customerCareInfo.email}</div>
-                  </div>
-                  
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-                      <MapPin className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="text-lg font-semibold mb-2">Visit Us</div>
-                    <div className="text-green-300">{customerCareInfo.address}</div>
-                  </div>
+                  <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <div className="font-semibold text-gray-900">Phone</div>
+                  <div className="text-gray-600">{customerCareInfo.phone}</div>
                 </motion.div>
-
+                
                 <motion.div 
-                  className="text-sm opacity-75"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  Support Hours: {customerCareInfo.hours}
+                  <Mail className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <div className="font-semibold text-gray-900">Email</div>
+                  <div className="text-gray-600">{customerCareInfo.email}</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <MapPin className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <div className="font-semibold text-gray-900">Location</div>
+                  <div className="text-gray-600">{customerCareInfo.address}</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <CheckCircle className="w-8 h-8 text-orange-600 mx-auto mb-3" />
+                  <div className="font-semibold text-gray-900">Hours</div>
+                  <div className="text-gray-600">{customerCareInfo.hours}</div>
                 </motion.div>
               </div>
             </Card>
           </motion.div>
 
-          {/* App Download Section */}
+          {/* Download ONE DABBA APP Section */}
           <motion.div 
             className="mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -713,178 +843,144 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative">
-              <Card className="p-12 lg:p-16 bg-gradient-to-br from-purple-900 via-pink-900 via-blue-900 to-cyan-900 border-0 shadow-2xl relative overflow-hidden">
-                {/* Animated Background Elements */}
-                <motion.div
-                  className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    rotate: 360,
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                <motion.div
-                  className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: -360,
-                  }}
-                  transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                
-                {/* Floating Decorative Icons */}
-                <motion.div
-                  className="absolute top-8 left-8 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"
-                  animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Smartphone className="w-6 h-6 text-white/70" />
-                </motion.div>
-                <motion.div
-                  className="absolute bottom-8 right-8 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"
-                  animate={{
-                    y: [0, 10, 0],
-                    rotate: [0, -360],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Download className="w-6 h-6 text-white/70" />
-                </motion.div>
-                
-                <div className="relative z-10 text-center text-white">
-                  <motion.div
-                    className="inline-flex items-center gap-2 bg-white/20 text-white px-6 py-3 rounded-full mb-8 backdrop-blur-sm"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Download className="size-5" />
-                    </motion.div>
-                    <span className="font-semibold">
-                      Download DUBB App Today
-                    </span>
-                  </motion.div>
-                  
-                  <motion.h2 
-                    className="text-4xl lg:text-5xl font-bold mb-6"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                      Start Your Financial Journey
-                    </span>
-                  </motion.h2>
-                  
-                  <motion.p 
-                    className="text-xl opacity-90 mb-12 max-w-2xl mx-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    Join millions who are building their financial future with DUBB. Start saving from just ₹10/day and watch your money grow.
-                  </motion.p>
-
-                  <motion.div 
-                    className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* App Store Button */}
-                    <motion.a
-                      href="#"
-                      className="group relative"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <div className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 shadow-2xl">
-                        <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                          <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                          </svg>
-                        </div>
-                        <div className="text-left">
-                          <div className="text-xs opacity-80">Download on the</div>
-                          <div className="text-lg font-semibold">App Store</div>
-                        </div>
-                      </div>
-                    </motion.a>
-
-                    {/* Google Play Button */}
-                    <motion.a
-                      href="#"
-                      className="group relative"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <div className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 shadow-2xl">
-                        <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z" fill="#32BBFF"/>
-                            <path d="M20.683 10.747l-2.85-1.644-4.040 2.897 4.040 2.897 2.85-1.644a1 1 0 000-1.506z" fill="#32BBFF"/>
-                            <path d="M13.792 12L3.61 1.814 17.832 9.103 13.792 12z" fill="#32BBFF"/>
-                            <path d="M13.792 12l4.040 2.897L3.61 22.186 13.792 12z" fill="#32BBFF"/>
-                          </svg>
-                        </div>
-                        <div className="text-left">
-                          <div className="text-xs opacity-80">GET IT ON</div>
-                          <div className="text-lg font-semibold">Google Play</div>
-                        </div>
-                      </div>
-                    </motion.a>
-                  </motion.div>
-
-                  <motion.div 
-                    className="flex justify-center items-center gap-8 mt-12 text-white/70"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-lg font-semibold">4.8</span>
-                      <span className="text-sm">App Rating</span>
-                    </div>
-                    <div className="h-6 w-px bg-white/30"></div>
-                    <div className="flex items-center gap-2">
-                      <Download className="w-5 h-5" />
-                      <span className="text-lg font-semibold">1M+</span>
-                      <span className="text-sm">Downloads</span>
-                    </div>
-                  </motion.div>
-                </div>
-              </Card>
+            <div className="text-center mb-12">
+              <motion.h2 
+                className="text-5xl font-bold text-gray-900 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-[#1E4A72] via-[#22C55E] to-purple-600 bg-clip-text text-transparent">
+                  Download ONE DABBA APP
+                </span>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-700 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Start your financial journey today with our mobile app
+              </motion.p>
             </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
+              {/* App Store Download Button */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                whileHover={{ scale: 1.05, y: -3 }}
+                className="cursor-pointer w-full sm:w-auto"
+                viewport={{ once: true }}
+              >
+                <Card className="p-4 sm:p-5 bg-gradient-to-r from-gray-900 to-black border-2 border-gray-700/50 hover:border-gray-600/70 hover:shadow-xl transition-all duration-300 relative overflow-hidden touch-manipulation">
+                  <motion.div
+                    className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-full -mr-8 -mt-8"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                  <div className="flex items-center gap-3 relative z-10">
+                    <motion.div 
+                      className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        boxShadow: [
+                          "0 4px 20px rgba(255, 255, 255, 0.2)",
+                          "0 8px 30px rgba(255, 255, 255, 0.3)",
+                          "0 4px 20px rgba(255, 255, 255, 0.2)"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                      </svg>
+                    </motion.div>
+                    <div className="min-w-0">
+                      <div className="text-xs text-gray-300 uppercase tracking-wide">Download on the</div>
+                      <div className="font-bold text-white text-lg">App Store</div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* Google Play Download Button */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                whileHover={{ scale: 1.05, y: -3 }}
+                className="cursor-pointer w-full sm:w-auto"
+                viewport={{ once: true }}
+              >
+                <Card className="p-4 sm:p-5 bg-gradient-to-r from-green-600 to-green-700 border-2 border-green-500/50 hover:border-green-400/70 hover:shadow-xl transition-all duration-300 relative overflow-hidden touch-manipulation">
+                  <motion.div
+                    className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -mr-8 -mt-8"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+                  />
+                  <div className="flex items-center gap-3 relative z-10">
+                    <motion.div 
+                      className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        boxShadow: [
+                          "0 4px 20px rgba(255, 255, 255, 0.2)",
+                          "0 8px 30px rgba(255, 255, 255, 0.3)",
+                          "0 4px 20px rgba(255, 255, 255, 0.2)"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.2
+                      }}
+                    >
+                      <svg className="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                      </svg>
+                    </motion.div>
+                    <div className="min-w-0">
+                      <div className="text-xs text-green-100 uppercase tracking-wide">Get it on</div>
+                      <div className="font-bold text-white text-lg">Google Play</div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* Additional download info */}
+            <motion.div 
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-gray-600 text-lg">
+                Available for iOS and Android devices. Start saving with just ₹10!
+              </p>
+              <div className="flex justify-center items-center gap-4 mt-4">
+                <div className="flex items-center gap-2">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-gray-600 font-medium">4.8 rating</span>
+                </div>
+                <div className="text-gray-400">•</div>
+                <span className="text-gray-600 font-medium">1M+ downloads</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

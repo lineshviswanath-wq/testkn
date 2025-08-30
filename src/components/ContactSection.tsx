@@ -39,7 +39,7 @@ const contactChannels = [
   {
     icon: PhoneCall,
     title: "Customer Care Helpline",
-    description: "24/7 support for all your DIGIDABBA needs",
+    description: "24/7 support for all your One DABBA needs",
     primary: "+91 484-2969-888",
     secondary: "Available 24/7 - Toll Free",
     responseTime: "Instant",
@@ -51,12 +51,12 @@ const contactChannels = [
     icon: Mail,
     title: "Customer Care Email",
     description: "Get detailed responses to your inquiries",
-    primary: "care@digidabba.com",
+    primary: "care@onedabba.com",
     secondary: "Available 24/7",
     responseTime: "< 6 hours",
     gradient: "from-blue-500 to-blue-600",
     bgGradient: "from-blue-50 to-blue-100",
-    action: "mailto:care@digidabba.com"
+    action: "mailto:care@onedabba.com"
   },
   {
     icon: MessageSquare,
@@ -208,11 +208,11 @@ const socialLinks = [
 
 const faqs = [
   {
-    question: "How quickly can I get started with DigiDabba?",
+    question: "How quickly can I get started with One DABBA?",
     answer: "You can start immediately after completing our simple 5-minute onboarding process. Our team provides personalized guidance to help you choose the right savings or repayment plan."
   },
   {
-    question: "What makes DigiDabba different from traditional banks?",
+    question: "What makes One DABBA different from traditional banks?",
     answer: "We focus specifically on micro-deposits starting from ₹10 and flexible NPA repayments, designed for Tier 2/3 India with mobile-first experience and culturally relevant solutions."
   },
   {
@@ -220,7 +220,7 @@ const faqs = [
     answer: "We use bank-grade encryption and work directly with RBI-approved partner banks. Your funds remain with trusted banking institutions while we provide the digital interface."
   },
   {
-    question: "Can businesses partner with DigiDabba for employee benefits?",
+    question: "Can businesses partner with One DABBA for employee benefits?",
     answer: "Yes! We offer corporate partnerships for employee financial wellness programs. Contact our partnership team to discuss custom solutions for your organization."
   },
   {
@@ -228,7 +228,7 @@ const faqs = [
     answer: "We provide support in 15+ Indian languages including Hindi, Tamil, Telugu, Malayalam, Kannada, Bengali, Gujarati, Marathi, and more through our multilingual support team."
   },
   {
-    question: "How does DigiDabba Design Studio work?",
+    question: "How does One DABBA Design Studio work?",
     answer: "Our design studio offers specialized BFSI design services including banking UX research, design systems, and compliance-focused design solutions. Contact us for a consultation."
   }
 ];
@@ -311,7 +311,7 @@ export function ContactSection() {
                 Connect With
               </span>
               <br />
-              <span className="text-gray-900">Team DigiDabba</span>
+              <span className="text-gray-900">Team One DABBA</span>
             </motion.h1>
             
             <motion.p 
@@ -334,7 +334,7 @@ export function ContactSection() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Why Choose <span className="text-[#22C55E]">DIGIDABBA</span> Support?
+                Why Choose <span className="text-[#22C55E]">One DABBA</span> Support?
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Our commitment to excellence shows in every interaction and support metric
@@ -458,7 +458,7 @@ export function ContactSection() {
                 Multiple Ways to <span className="text-[#22C55E]">Connect</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Choose your preferred channel for instant support. Our dedicated team is always ready to help you with deposits, repayments, or any DIGIDABBA questions.
+                Choose your preferred channel for instant support. Our dedicated team is always ready to help you with deposits, repayments, or any One DABBA questions.
               </p>
             </div>
 

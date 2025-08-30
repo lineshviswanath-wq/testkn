@@ -112,7 +112,7 @@ export function DabbaPayPage() {
               <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
                 {/* DABBA PAY Badge - Professional with Kaniro colors */}
                 <motion.div 
-                  className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3"
+                  className="flex items-center justify-start gap-2 sm:gap-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
@@ -141,7 +141,7 @@ export function DabbaPayPage() {
                 
                 {/* Main Heading - Professional with impact */}
                 <motion.h1 
-                  className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-[1.05] sm:leading-[1.1] text-center lg:text-left"
+                  className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-[1.05] sm:leading-[1.1] text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -161,7 +161,7 @@ export function DabbaPayPage() {
                 
                 {/* Enhanced Subtitle - Customer focused */}
                 <motion.div 
-                  className="space-y-3 sm:space-y-4 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+                  className="space-y-3 sm:space-y-4 max-w-2xl text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -184,7 +184,7 @@ export function DabbaPayPage() {
 
                 {/* Enhanced Feature Card - Single focused CTA */}
                 <motion.div 
-                  className="space-y-3 sm:space-y-4 md:space-y-5 max-w-2xl mx-auto lg:mx-0"
+                  className="space-y-3 sm:space-y-4 md:space-y-5 max-w-2xl"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
@@ -210,7 +210,7 @@ export function DabbaPayPage() {
                       <Target className="size-5 sm:size-6 md:size-7 text-white" />
                     </motion.div>
                     <div className="flex-1 min-w-0 relative z-10">
-                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Micro Loan Repayment Plan</h4>
+                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Due Loan Repayment</h4>
                       <div className="text-orange-100 text-xs sm:text-sm md:text-base space-y-0.5 sm:space-y-1">
                         <div className="font-semibold">Start with ₹100/day and scale as per your income</div>
                         <div className="font-medium">Flexible daily/weekly/monthly options!</div>
@@ -232,14 +232,14 @@ export function DabbaPayPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  <div className="mb-4 sm:mb-6 text-center lg:text-left">
+                  <div className="mb-4 sm:mb-6 text-left">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                       <span className="text-orange-600">Your Financial Freedom, Our Mission</span>
                     </h3>
                   </div>
                   
                   {/* Row 1: Bank-Level Security + Rebuild Credit Score */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4 max-w-4xl mx-auto lg:mx-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4 max-w-4xl">
                     {/* Bank-Level Security */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -323,7 +323,7 @@ export function DabbaPayPage() {
                   </div>
 
                   {/* Row 2: Omnichannel + Doorstep Service */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10 max-w-4xl mx-auto lg:mx-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10 max-w-4xl">
                     {/* Omnichannel */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -418,7 +418,7 @@ export function DabbaPayPage() {
                   </motion.div>
 
                   {/* Row 3: App Store + Google Play Download Buttons */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8 max-w-4xl mx-auto lg:mx-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8 max-w-4xl">
                     {/* App Store Download Button */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}

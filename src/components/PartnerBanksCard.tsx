@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from "./ui/card";
 import { BankLogo, bankLogos } from "./BankLogos";
 import { motion } from "motion/react";
-import { Building2, CreditCard, TrendingUp, Shield, CheckCircle } from "lucide-react";
+import { Building2, TrendingUp, Shield, CheckCircle } from "lucide-react";
 
 // Unified partner banks - no duplicates
 const partnerBanks = [
@@ -91,15 +91,15 @@ export function PartnerBanksCard() {
             </div>
           </motion.div>
 
-          {/* Service Features Grid - Better space usage */}
+          {/* Service Features - Micro Deposits Only */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.2 }}
-            className="grid md:grid-cols-2 gap-6 mb-6"
+            className="flex justify-center mb-6"
           >
             {/* Deposits Card */}
-            <div className="p-6 bg-gradient-to-br from-[#F0FDF4] to-green-50 rounded-2xl border border-[#22C55E]/20 relative overflow-hidden">
+            <div className="p-6 bg-gradient-to-br from-[#F0FDF4] to-green-50 rounded-2xl border border-[#22C55E]/20 relative overflow-hidden max-w-md w-full">
               <motion.div
                 className="absolute top-0 right-0 w-16 h-16 bg-[#22C55E]/10 rounded-full -mr-8 -mt-8"
                 animate={{ rotate: 360 }}
@@ -127,40 +127,6 @@ export function PartnerBanksCard() {
                   <div className="flex items-center gap-2">
                     <CheckCircle className="size-4 text-[#22C55E]" />
                     <span>Flexible withdrawal options</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Repayments Card */}
-            <div className="p-6 bg-gradient-to-br from-[#E3F2FD] to-blue-50 rounded-2xl border border-[#1E4A72]/20 relative overflow-hidden">
-              <motion.div
-                className="absolute top-0 right-0 w-16 h-16 bg-[#1E4A72]/10 rounded-full -mr-8 -mt-8"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <motion.div
-                    className="p-3 bg-gradient-to-br from-[#1E4A72] to-blue-600 rounded-xl"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <CreditCard className="size-5 text-white" />
-                  </motion.div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">NPA Repayment</h4>
-                    <p className="text-sm text-gray-600">Flexible ₹100+ installments</p>
-                  </div>
-                </div>
-                <div className="text-sm text-gray-700">
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle className="size-4 text-[#1E4A72]" />
-                    <span>Rebuild credit score fast</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="size-4 text-[#1E4A72]" />
-                    <span>No prepayment penalties</span>
                   </div>
                 </div>
               </div>

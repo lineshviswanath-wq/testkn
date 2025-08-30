@@ -1,8 +1,17 @@
+import React, { useContext } from "react";
 import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
+import { NavigationContext } from "../App";
 import kaniroLogo from "figma:asset/59a4e87f6f8559c1e33304344c14ed5d1faafe70.png";
 
 export function Footer() {
+  const { setNavigation } = useContext(NavigationContext);
+
+  const handleNavClick = (view: 'home' | 'dashboard' | 'deposits' | 'repayments' | 'fintx-studio' | 'about' | 'contact' | 'dabbasave' | 'dabbapay' | 'dabbasavepay') => {
+    setNavigation({ currentView: view });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -10,16 +19,20 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img 
-                src={kaniroLogo}
-                alt="Kaniro Financial Services"
-                className="h-10 w-auto object-contain filter brightness-0 invert"
-              />
+              <button 
+                onClick={() => handleNavClick('about')}
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  src={kaniroLogo}
+                  alt="Kaniro Financial Services"
+                  className="h-10 w-auto object-contain filter brightness-0 invert"
+                />
+              </button>
             </div>
             <p className="text-gray-400 text-sm">
-              Empowering financial inclusion through accessible micro-deposits and flexible loan repayments for Omni Channel India.
+              OneDABBA brings back the trusted idea of the traditional "dabba" savings box in a modern, digital form to help individuals and families manage money better.
             </p>
-
 
             {/* Social Media */}
             <div className="flex gap-3">
@@ -35,15 +48,58 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Main Menu */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">Products and Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Micro Deposits</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Recurring Deposits</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">NPA Repayments</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Credit Score Improvement</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Financial Planning</a></li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('about')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  What's Kaniro
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('dabbasave')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  DABBA SAVE
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('dabbapay')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  DABBA PAY
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('dabbasavepay')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  DABBA SAVE & PAY
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('fintx-studio')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  FINTX STUDIO
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleNavClick('contact')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  CONTACT
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -55,7 +111,6 @@ export function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Bank Integration</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Agent Network</a></li>
               <li><a href="#" className="hover:text-white transition-colors">API Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Support</a></li>
             </ul>
           </div>
 
@@ -73,15 +128,15 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-4 flex-shrink-0" />
-                <span>care@dabbasave.com</span>
+                <span>care@kaniro.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="size-4 flex-shrink-0" />
-                <span>Kerala & South India (Phase 1)</span>
+                <span>Kochi, Kerala</span>
               </div>
               <div className="flex items-center gap-2">
                 <Building2 className="size-4 flex-shrink-0" />
-                <span>For Banks: partners@kanirofinance.com</span>
+                <span>For Banks: partners@kaniro.com</span>
               </div>
             </div>
           </div>

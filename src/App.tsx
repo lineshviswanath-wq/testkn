@@ -10,6 +10,7 @@ import { NPARepaymentSection } from "./components/NPARepaymentSection";
 import { PartnerBanksCard } from "./components/PartnerBanksCard";
 import { DabbaSavePage } from "./components/DabbaSavePage";
 import { DabbaPayPage } from "./components/DabbaPayPage";
+import { DabbaSavePayPage } from "./components/DabbaSavePayPage";
 import { Dashboard } from "./components/Dashboard";
 import { Footer } from "./components/Footer";
 import { LoginModal } from "./components/LoginModal";
@@ -86,16 +87,7 @@ export default function App() {
             </>
           )}
           {navigation.currentView === 'dabbapay' && <DabbaPayPage />}
-          {navigation.currentView === 'dabbasavepay' && (
-            <>
-              <HeroSection />
-              <DepositCalculator />
-              <MicroDepositsSection />
-              <PartnerBanksCard />
-              <DabbaPayPage />
-              <ContactSection />
-            </>
-          )}
+          {navigation.currentView === 'dabbasavepay' && <DabbaSavePayPage />}
           {navigation.currentView === 'dashboard' && <Dashboard />}
           {navigation.currentView === 'deposits' && <MicroDepositsSection />}
           {navigation.currentView === 'repayments' && <NPARepaymentSection />}

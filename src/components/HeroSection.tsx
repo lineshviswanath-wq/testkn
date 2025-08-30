@@ -81,7 +81,7 @@ export function HeroSection() {
             <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
               {/* DigiDabba Badge - Professional with Kaniro colors */}
               <motion.div 
-                className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3"
+                className="flex items-center justify-start gap-2 sm:gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -104,20 +104,20 @@ export function HeroSection() {
                   >
                     <Target className="size-3 sm:size-4 md:size-5" />
                   </motion.div>
-                  <span className="font-bold tracking-wide text-xs sm:text-sm md:text-base">DIGIDABBA - Your Digital Money Box</span>
+                  <span className="font-bold tracking-wide text-xs sm:text-sm md:text-base">DABBA SAVE - Your Digital Money Box</span>
                 </motion.div>
               </motion.div>
               
               {/* Main Heading - Professional with impact */}
               <motion.h1 
-                className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-[1.05] sm:leading-[1.1] text-center lg:text-left"
+                className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-[1.05] sm:leading-[1.1] text-left"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <span className="block mb-1 sm:mb-2">
                   <span className="bg-gradient-to-r from-[#1E4A72] to-[#22C55E] bg-clip-text text-transparent">
-                    DIGIDABBA
+                    DABBA SAVE
                   </span>
                 </span>
                 <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-gray-800 leading-tight">
@@ -130,7 +130,7 @@ export function HeroSection() {
               
               {/* Enhanced Subtitle - Customer focused */}
               <motion.div 
-                className="space-y-3 sm:space-y-4 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+                className="space-y-3 sm:space-y-4 max-w-2xl text-left"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -153,7 +153,7 @@ export function HeroSection() {
 
               {/* Enhanced Feature Cards with Kaniro branding */}
               <motion.div 
-                className="space-y-3 sm:space-y-4 md:space-y-5 max-w-2xl mx-auto lg:mx-0"
+                className="space-y-3 sm:space-y-4 md:space-y-5 max-w-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
@@ -203,14 +203,14 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <div className="mb-4 sm:mb-6 text-center lg:text-left">
+                <div className="mb-4 sm:mb-6 text-left">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                     <span className="text-[#22C55E]">Your Trust, Our Responsibility</span>
                   </h3>
                 </div>
                 
                 {/* Row 1: Bank Level Security */}
-                <div className="max-w-md mx-auto lg:mx-0 mb-3 sm:mb-4">
+                <div className="max-w-md mb-3 sm:mb-4">
                   {/* Bank Level Security */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -253,7 +253,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Row 2: Omnichannel + Doorstep Service */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10 max-w-4xl mx-auto lg:mx-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10 max-w-4xl">
                   {/* Omnichannel */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -348,7 +348,7 @@ export function HeroSection() {
                 </motion.div>
 
                 {/* Row 3: App Store + Google Play Download Buttons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8 max-w-4xl mx-auto lg:mx-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8 max-w-4xl">
                   {/* App Store Download Button */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -433,6 +433,7 @@ export function HeroSection() {
                     </Card>
                   </motion.div>
                 </div>
+
               </motion.div>
 
             </div>

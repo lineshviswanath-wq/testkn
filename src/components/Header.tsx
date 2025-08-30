@@ -61,9 +61,7 @@ export function Header() {
     setNavigation({ showLoginModal: true });
   };
 
-  const handleGetStartedClick = () => {
-    setNavigation({ showSignupModal: true });
-  };
+
 
   return (
     <header ref={headerRef} className="bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -105,7 +103,12 @@ export function Header() {
             DABBA PAY
           </button>
 
-
+          <button 
+            onClick={() => handleNavClick('dabbasavepay')}
+            className="text-gray-600 hover:text-purple-600 transition-colors"
+          >
+            DABBA SAVE & PAY
+          </button>
 
           <button 
             onClick={() => handleNavClick('fintx-studio')}
@@ -142,13 +145,6 @@ export function Header() {
             onClick={handleLoginClick}
           >
             LOGIN
-          </Button>
-          <Button 
-            size="sm" 
-            className="bg-blue-600 hover:bg-blue-700"
-            onClick={handleGetStartedClick}
-          >
-            GET STARTED
           </Button>
           
           {/* Mobile Menu Button */}
@@ -197,7 +193,15 @@ export function Header() {
               DABBA PAY
             </button>
 
-
+            <button 
+              onClick={() => {
+                handleNavClick('dabbasavepay');
+                setShowMobileMenu(false);
+              }}
+              className="block text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              DABBA SAVE & PAY
+            </button>
 
             <button 
               onClick={() => {

@@ -124,7 +124,7 @@ export function DepositCalculator() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Calculate your potential returns with DIGIDABBA's micro-deposit plan.{" "}
+            Calculate your potential returns with DABBA SAVE's micro-deposit plan.{" "}
             <span className="font-bold text-[#22C55E]">Start with just ₹10 daily!</span>
           </p>
         </motion.div>
@@ -438,7 +438,7 @@ export function DepositCalculator() {
                   className="w-full h-14 bg-gradient-to-r from-[#22C55E] to-[#16A34A] hover:from-[#16A34A] hover:to-[#15803D] text-white font-bold text-lg shadow-xl"
                   size="lg"
                 >
-                  <span>START YOUR DIGIDABBA JOURNEY</span>
+                  <span>START YOUR DABBA SAVE JOURNEY</span>
                   <ArrowRight className="size-5 ml-2" />
                 </Button>
               </motion.div>
