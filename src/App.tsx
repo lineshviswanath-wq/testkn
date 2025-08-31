@@ -83,14 +83,7 @@ export default function App() {
               <MicroDepositsSection />
             </>
           )}
-          {navigation.currentView === 'dabbasave' && (
-            <>
-              <HeroSection />
-              <DepositCalculator />
-              <MicroDepositsSection />
-              <PartnerBanksCard />
-            </>
-          )}
+          {navigation.currentView === 'dabbasave' && <DabbaSavePage />}
           {navigation.currentView === 'dabbapay' && <DabbaPayPage />}
           {navigation.currentView === 'dabbasavepay' && <DabbaSavePayPage />}
           {navigation.currentView === 'dashboard' && <Dashboard />}
