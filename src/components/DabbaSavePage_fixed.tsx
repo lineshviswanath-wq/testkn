@@ -289,7 +289,7 @@ export function DabbaSavePage() {
               </div>
             </motion.div>
 
-            {/* Right Images - Single Frame with Left-Right Layout */}
+            {/* Right Images - Single Frame with Left-Right Layout - FIXED */}
             <motion.div 
               className="relative"
               initial={{ opacity: 0, x: 30 }}
@@ -299,7 +299,7 @@ export function DabbaSavePage() {
               <div className="relative">
                 {/* Enhanced Background with Multiple Gradients */}
                 <motion.div
-                  className="absolute -inset-8 bg-gradient-to-br from-orange-100 via-blue-100 to-green-100 rounded-3xl"
+                  className="absolute -inset-6 bg-gradient-to-br from-orange-100 via-blue-100 to-green-100 rounded-3xl"
                   animate={{
                     scale: [1, 1.03, 1],
                     rotate: [0, 1, -1, 0]
@@ -313,7 +313,7 @@ export function DabbaSavePage() {
                 
                 {/* Glowing border effect */}
                 <motion.div
-                  className="absolute -inset-2 bg-gradient-to-r from-orange-400 via-blue-400 to-green-400 rounded-3xl blur-sm opacity-30"
+                  className="absolute -inset-1 bg-gradient-to-r from-orange-400 via-blue-400 to-green-400 rounded-3xl blur-sm opacity-30"
                   animate={{
                     opacity: [0.3, 0.6, 0.3]
                   }}
@@ -324,9 +324,9 @@ export function DabbaSavePage() {
                   }}
                 />
                 
-                {/* Enhanced Frame Container */}
+                {/* Enhanced Frame Container - REDUCED WIDTH */}
                 <motion.div
-                  className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20"
+                  className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-white/20 max-w-md mx-auto"
                   whileHover={{ 
                     scale: 1.02,
                     y: -5,
@@ -334,8 +334,8 @@ export function DabbaSavePage() {
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  {/* Horizontal Image Layout */}
-                  <div className="grid grid-cols-2 gap-6 items-center">
+                  {/* Horizontal Image Layout - REDUCED GAP */}
+                  <div className="grid grid-cols-2 gap-3 items-center">
                     {/* Traditional Woman - Left Side */}
                     <motion.div
                       className="relative"
@@ -482,7 +482,38 @@ export function DabbaSavePage() {
                     </motion.div>
                   </motion.div>
 
-
+                  {/* Enhanced Frame Label - SINGLE LINE TEXT */}
+                  <motion.div
+                    className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 via-green-500 to-blue-500 text-white px-4 py-2 rounded-full shadow-2xl border-2 border-white/30 whitespace-nowrap"
+                    animate={{
+                      y: [0, -5, 0],
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.3)"
+                    }}
+                  >
+                    <motion.span 
+                      className="text-xs font-medium"
+                      animate={{
+                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    >
+                      Traditional → Digital
+                    </motion.span>
+                  </motion.div>
                 </motion.div>
 
                 {/* Floating Decorative Elements Outside Frame */}
@@ -744,12 +775,6 @@ export function DabbaSavePage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Calculator Section */}
-      <DepositCalculator />
-
-      {/* Micro Deposits Section */}
-      <MicroDepositsSection />
 
       {/* Enhanced Benefits Section */}
       <section className="relative py-20 overflow-hidden">
@@ -1040,7 +1065,7 @@ export function DabbaSavePage() {
                           {testimonial.savings}
                         </div>
                         <div className="text-xs text-gray-500 font-medium">in {testimonial.duration}</div>
-                      </motion.div>
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -1050,7 +1075,13 @@ export function DabbaSavePage() {
         </div>
       </section>
 
-      {/* Partner Banks Section */}
+      {/* Deposit Calculator */}
+      <DepositCalculator />
+
+      {/* Micro Deposits Section */}
+      <MicroDepositsSection />
+
+      {/* Partner Banks */}
       <PartnerBanksCard />
     </div>
   );

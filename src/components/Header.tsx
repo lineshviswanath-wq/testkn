@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Button } from "./ui/button";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import { NavigationContext } from "../App";
 import kaniroLogo from "figma:asset/59a4e87f6f8559c1e33304344c14ed5d1faafe70.png";
 
@@ -68,9 +68,9 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <button 
             onClick={() => handleNavClick('about')}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className="bg-gradient-to-r from-[#1E4A72] to-[#22C55E] bg-clip-text text-transparent font-bold hover:from-blue-700 hover:to-green-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50"
           >
-            What's Kaniro
+            OneDabba
           </button>
 
           <button 
@@ -96,7 +96,7 @@ export function Header() {
 
           <button 
             onClick={() => handleNavClick('fintx-studio')}
-            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50"
           >
             Fintx Studio
           </button>
@@ -105,7 +105,7 @@ export function Header() {
 
           <button 
             onClick={() => handleNavClick('contact')}
-            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bold hover:from-orange-700 hover:to-red-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50"
           >
             Contact
           </button>
@@ -113,19 +113,10 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          {/* Customer Care - Prominent display */}
-          <a 
-            href="tel:+914842969888"
-            className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-2 rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 text-sm font-medium"
-          >
-            <Phone className="size-4" />
-            +91 484-2969-888
-          </a>
-          
           <Button 
             variant="ghost" 
             size="sm" 
-            className="hidden md:flex"
+            className="hidden md:flex bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold hover:from-indigo-700 hover:to-blue-700 transition-all duration-300 px-4 py-2 rounded-lg shadow-md hover:shadow-lg"
             onClick={handleLoginClick}
           >
             LOGIN
@@ -152,9 +143,9 @@ export function Header() {
                 handleNavClick('about');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-600 hover:text-blue-600 transition-colors"
+              className="block bg-gradient-to-r from-[#1E4A72] to-[#22C55E] bg-clip-text text-transparent font-bold hover:from-blue-700 hover:to-green-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50"
             >
-              What's Kaniro
+              OneDabba
             </button>
 
             <button 
@@ -192,7 +183,7 @@ export function Header() {
                 handleNavClick('fintx-studio');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50"
             >
               Fintx Studio
             </button>
@@ -204,26 +195,16 @@ export function Header() {
                 handleNavClick('contact');
                 setShowMobileMenu(false);
               }}
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bold hover:from-orange-700 hover:to-red-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50"
             >
               Contact
             </button>
-
-            {/* Mobile Customer Care */}
-            <a 
-              href="tel:+914842969888"
-              className="flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium"
-              onClick={() => setShowMobileMenu(false)}
-            >
-              <Phone className="size-4" />
-              Customer Care: +91 484-2969-888
-            </a>
 
             {/* Mobile Login Button */}
             <Button 
               variant="ghost" 
               size="sm" 
-              className="w-full justify-start"
+              className="w-full justify-start bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold hover:from-indigo-700 hover:to-blue-700 transition-all duration-300 px-4 py-2 rounded-lg shadow-md hover:shadow-lg"
               onClick={() => {
                 handleLoginClick();
                 setShowMobileMenu(false);
