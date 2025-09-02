@@ -151,34 +151,64 @@ export function DabbaPayPage() {
                       DABBA PAY
                     </span>
                   </span>
-                  <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-gray-800 leading-tight">
+                  <span className="block text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
                     Transform Your 
-                    <span className="text-orange-600 font-black"> Loan Stress </span>
+                    <span className="text-orange-600 font-black"> Overdue Loan Stress </span>
                     Into 
                     <span className="text-[#22C55E] font-black"> Financial Freedom! </span>
                   </span>
                 </motion.h1>
                 
-                {/* Enhanced Subtitle - Customer focused */}
+                {/* Description */}
                 <motion.div 
-                  className="space-y-3 sm:space-y-4 max-w-2xl text-left"
+                  className="space-y-4 max-w-2xl text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-semibold">
-                    From <span className="text-orange-600 font-bold">High EMI Burden</span> to 
-                    <span className="text-[#22C55E] font-bold"> Micro Repayments</span> = 
-                    <span className="text-gray-900 font-bold"> Your Path to Freedom!</span>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    <span className="font-semibold text-gray-900">Micro Repayment Solutions for Overdue or NPA Loans →</span><br />
+                    <span className="font-semibold text-gray-900">Your Financial Freedom Today!</span>
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-                    <span className="font-semibold text-[#1E4A72]">Start with just ₹100/day and build your way to financial freedom</span>—flexible daily, weekly, or monthly repayments that fit your income!
+                  
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    The one and only platform designed to simplify repayments for <span className="font-semibold text-orange-600">Overdue Loans</span>, supporting borrowers who are struggling with high outstanding amounts or one-time settlements. With DABBA PAY, you can repay your overdue loans on a <span className="font-semibold text-[#1E4A72]">daily, weekly, or monthly basis</span>, with flexible amounts starting from just <span className="font-bold text-[#22C55E]">₹100</span>.
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-                    Supporting low-income families, daily wage workers, small businesses, and MSMEs with <span className="font-bold text-[#1E4A72]">micro-repayment solutions</span> as part of India's <span className="font-semibold text-[#22C55E]">Financial Inclusion Program.</span>
+                  
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    We are partnering with <span className="font-semibold text-[#1E4A72]">major banks</span> to deliver comprehensive loan repayment solutions—from micro-repayments to smart, flexible schedules—empowering every borrower to clear overdue loans and regain financial stability.
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-                    <span className="font-bold text-orange-600">All repayments are reflected in real time on loan accounts, ensuring 100% compliance, trust, and transparency</span>
+                  
+                  {/* Feature List with Checkmarks */}
+                  <div className="space-y-2 pt-2">
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#22C55E] text-lg mt-0.5">✅</span>
+                      <span className="text-base text-gray-600 leading-relaxed">
+                        <span className="font-semibold text-gray-900">Real-time settlements</span> directly into bank loan accounts
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#22C55E] text-lg mt-0.5">✅</span>
+                      <span className="text-base text-gray-600 leading-relaxed">
+                        <span className="font-semibold text-gray-900">100% transparency</span> with instant loan updates
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#22C55E] text-lg mt-0.5">✅</span>
+                      <span className="text-base text-gray-600 leading-relaxed">
+                        <span className="font-semibold text-gray-900">Credit score restoration</span> for future financial eligibility
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#22C55E] text-lg mt-0.5">✅</span>
+                      <span className="text-base text-gray-600 leading-relaxed">
+                        <span className="font-semibold text-gray-900">Pathway to financial inclusion</span> for every borrower
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-base text-gray-600 leading-relaxed font-medium pt-2">
+                    With DABBA PAY, every small payment helps you overcome overdue loans and rebuild your journey towards <span className="font-bold text-[#22C55E]">freedom</span>, <span className="font-bold text-[#1E4A72]">stability</span>, and <span className="font-bold text-orange-600">trust</span>.
                   </p>
                 </motion.div>
 
@@ -210,7 +240,7 @@ export function DabbaPayPage() {
                       <Target className="size-5 sm:size-6 md:size-7 text-white" />
                     </motion.div>
                     <div className="flex-1 min-w-0 relative z-10">
-                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Due Loan Repayment</h4>
+                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Over Due Loan Repayment</h4>
                       <div className="text-orange-100 text-xs sm:text-sm md:text-base space-y-0.5 sm:space-y-1">
                         <div className="font-semibold">Start with ₹100/day and scale as per your income</div>
                         <div className="font-medium">Flexible daily/weekly/monthly options!</div>

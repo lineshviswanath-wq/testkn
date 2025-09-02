@@ -231,17 +231,15 @@ export function DabbaSavePage() {
                 </p>
                 
                 <p className="text-base text-gray-600 leading-relaxed">
-                  Small savings today, big changes tomorrow—start with ₹10!
+                  Unlike traditional Recurring Deposits that are often designed for fixed monthly payments, <span className="font-semibold text-blue-600">DABBA SAVE introduces the first-of-its-kind daily micro-deposit plan</span>. You can start small, deposit flexibly every day, and steadily build your financial future without the burden of heavy commitments.
                 </p>
                 
                 <p className="text-base text-gray-600 leading-relaxed">
-                  From micro-deposits to comprehensive financial solutions, DABBA SAVE 
-                  empowers every household to build smart financial security through 
-                  financial inclusion and simple, worry-free investment.
+                  From micro-deposits to comprehensive financial solutions, DABBA SAVE empowers every household to achieve smart financial security through inclusion and simple, worry-free investments. And with <span className="font-semibold text-green-600">all deposits secured in partnered banks</span>, your money is <span className="font-bold text-gray-900">100% safe—guaranteed</span>.
                 </p>
                 
                 <p className="text-base text-gray-600 leading-relaxed font-medium">
-                  All deposits are secured in partnered banks, guaranteeing 100% safety.
+                  Just like the traditional dabba in every household of olden days, where small coins turned into big savings, <span className="font-semibold text-orange-600">DABBA SAVE brings back that trusted habit—now transformed digitally for today's world</span>.
                 </p>
               </div>
 
