@@ -33,8 +33,8 @@ export function KaniroDesignStudio() {
     <>
       {/* Creative Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 py-16 relative overflow-hidden min-h-[90vh] flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 lg:px-8 xl:px-12 max-w-[1800px]">
+          <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
             {/* Content */}
             <div className="space-y-6 relative">
               {/* Animated design elements on the left side */}

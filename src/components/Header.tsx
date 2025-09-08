@@ -49,7 +49,7 @@ export function Header() {
 
   return (
     <header ref={headerRef} className="bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12 py-3 flex items-center justify-between max-w-[1800px]">
         {/* Logo */}
         <div className="flex items-center">
           <button 
@@ -65,7 +65,7 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8 xl:gap-12">
           <button 
             onClick={() => handleNavClick('about')}
             className="bg-gradient-to-r from-[#1E4A72] to-[#22C55E] bg-clip-text text-transparent font-bold hover:from-blue-700 hover:to-green-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50"

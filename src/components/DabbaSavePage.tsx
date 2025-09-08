@@ -161,7 +161,7 @@ export function DabbaSavePage() {
             </motion.div>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
             {/* Left Content */}
             <motion.div 
               className="space-y-6"

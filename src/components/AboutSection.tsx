@@ -214,8 +214,8 @@ export function AboutSection() {
         }}
       />
 
-      <div className="container mx-auto px-4 py-16 relative">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12 py-16 relative">
+        <div className="max-w-[1800px] mx-auto">
           {/* Hero Section */}
           <motion.div 
             className="mb-20"
@@ -223,7 +223,7 @@ export function AboutSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-start">
               {/* Left Content */}
               <div className="text-left lg:text-left">
                 <motion.div
@@ -692,7 +692,7 @@ export function AboutSection() {
               </motion.p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 xl:grid-cols-3 gap-8 xl:gap-12 mb-16">
               {/* Feature 1 - Micro Deposits */}
               <motion.div
                 className="relative group"

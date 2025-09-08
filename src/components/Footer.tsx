@@ -14,8 +14,8 @@ export function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12 py-12 max-w-[1800px]">
+        <div className="grid md:grid-cols-4 xl:grid-cols-4 gap-8 xl:gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center">
