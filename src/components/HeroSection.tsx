@@ -13,8 +13,8 @@ export function HeroSection() {
 
   return (
     <section className="bg-gradient-to-br from-blue-50 to-green-50 py-8 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden min-h-screen flex items-center">
-      <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
+      <div className="container mx-auto px-8 lg:px-12 xl:px-16">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start max-w-[1600px] mx-auto">
           {/* Content - Mobile-first approach */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 md:space-y-8 relative order-1 lg:order-1">
             {/* Animated circular elements - Hide on mobile for performance */}

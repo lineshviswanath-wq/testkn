@@ -240,7 +240,7 @@ export function DabbaPayPage() {
                       <Target className="size-5 sm:size-6 md:size-7 text-white" />
                     </motion.div>
                     <div className="flex-1 min-w-0 relative z-10">
-                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Over Due Loan Repayment</h4>
+                      <h4 className="font-black text-white text-base sm:text-lg md:text-xl mb-1">Start Your Overdue Loan Repayment</h4>
                       <div className="text-orange-100 text-xs sm:text-sm md:text-base space-y-0.5 sm:space-y-1">
                         <div className="font-semibold">Start with ₹100/day and scale as per your income</div>
                         <div className="font-medium">Flexible daily/weekly/monthly options!</div>

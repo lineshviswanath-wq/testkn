@@ -40,7 +40,7 @@ const npaPartnerBanks = [
     averageRecovery: "73%",
     minPayment: 10,
     popular: true,
-    description: "India's largest public sector bank with comprehensive micro repayment programs",
+    description: "India's largest public sector bank with comprehensive easy payment programs",
     recoveryTrend: "+5.2%",
     satisfactionRate: 88
   },
@@ -54,7 +54,7 @@ const npaPartnerBanks = [
     averageRecovery: "81%",
     minPayment: 25,
     popular: true,
-    description: "Leading private sector bank with digital-first micro repayment solutions",
+    description: "Leading private sector bank with digital-first easy payment solutions",
     recoveryTrend: "+7.1%",
     satisfactionRate: 92
   },
@@ -68,7 +68,7 @@ const npaPartnerBanks = [
     averageRecovery: "68%",
     minPayment: 5,
     popular: false,
-    description: "Focused on rural and semi-urban due loan recovery with micro repayment options",
+    description: "Focused on rural and semi-urban outstanding loan recovery with easy payment options",
     recoveryTrend: "+3.8%",
     satisfactionRate: 85
   },
@@ -82,7 +82,7 @@ const npaPartnerBanks = [
     averageRecovery: "70%",
     minPayment: 15,
     popular: false,
-    description: "Public sector bank with strong presence in agricultural due loans",
+    description: "Public sector bank with strong presence in agricultural outstanding loans",
     recoveryTrend: "+4.3%",
     satisfactionRate: 82
   },
@@ -96,7 +96,7 @@ const npaPartnerBanks = [
     averageRecovery: "79%",
     minPayment: 20,
     popular: true,
-    description: "Technology-driven due loan management with 24/7 payment options",
+    description: "Technology-driven outstanding loan management with 24/7 payment options",
     recoveryTrend: "+6.5%",
     satisfactionRate: 90
   },
@@ -110,7 +110,7 @@ const npaPartnerBanks = [
     averageRecovery: "65%",
     minPayment: 10,
     popular: false,
-    description: "Traditional public sector bank with personalized due loan recovery support",
+    description: "Traditional public sector bank with personalized outstanding loan recovery support",
     recoveryTrend: "+2.9%",
     satisfactionRate: 79
   }
@@ -125,7 +125,7 @@ const successStories = [
     recoveredAmount: "₹18,500",
     timeline: "14 months",
     dailyPayment: "₹50",
-    quote: "Started with ₹50/day through DABBA PAY. SBI's flexible system helped me clear most of my dues!",
+    quote: "Started with ₹50/day through DABBA PAY. SBI's flexible system helped me clear most of my outstanding loan!",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
     improvementScore: "+180 points"
   },
@@ -164,14 +164,14 @@ const features = [
   },
   {
     icon: IndianRupee,
-    title: "Any Amount",
+    title: "Small Amounts",
     description: "Make payments as low as ₹5 or as much as you can afford",
     color: "green"
   },
   {
     icon: TrendingDown,
     title: "Reduce Interest",
-    description: "Lower your outstanding balance and save on interest costs",
+    description: "Lower your loan balance and save on interest costs",
     color: "purple"
   },
   {
@@ -205,7 +205,7 @@ export function NPARepaymentSection() {
 
   const handleCalculate = () => {
     if (customAmount) {
-      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the due loan.`);
+      alert(`For ₹${customAmount} payments with ${selectedBank?.name}, you'll need approximately ${Math.ceil(32000 / parseInt(customAmount))} payments to clear the outstanding loan.`);
     } else {
       alert('Please enter an amount to calculate.');
     }
@@ -298,7 +298,7 @@ export function NPARepaymentSection() {
           }}
         />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-8 lg:px-12 xl:px-16 max-w-[1600px] relative z-10">
           {/* Header */}
           <motion.div 
             className="text-center mb-12"
@@ -325,7 +325,7 @@ export function NPARepaymentSection() {
               >
                 <CreditCard className="size-5" />
               </motion.div>
-              <span className="font-bold text-lg">DABBA PAY Micro Repayments - Due Loans Platform</span>
+              <span className="font-bold text-lg">DABBA PAY Easy Loan Repayments Platform</span>
             </motion.div>
             
             <motion.h2 
@@ -335,7 +335,7 @@ export function NPARepaymentSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#1E4A72]">End Due Loan Stress!</span> 
+              <span className="text-[#1E4A72]">End Loan Repayment Stress!</span> 
               <span className="text-[#22C55E]"> Choose Your Bank</span>
             </motion.h2>
             
@@ -351,9 +351,9 @@ export function NPARepaymentSection() {
                 <span className="text-[#1E4A72] font-bold"> just ₹5/day!</span>
               </p>
               <p className="text-lg text-gray-600">
-                Choose your bank and start Micro Repayment for Due Loans. With India's 
+                Choose your bank and start Easy Loan Repayments. With India's 
                 <span className="font-semibold text-[#1E4A72]"> major banks </span> offering 
-                <span className="font-bold text-[#22C55E]"> dedicated micro repayment programs!</span>
+                <span className="font-bold text-[#22C55E]"> dedicated easy payment programs!</span>
               </p>
             </motion.div>
           </motion.div>
@@ -558,7 +558,7 @@ export function NPARepaymentSection() {
                         whileHover={{ backgroundColor: "#F9FAFB" }}
                       >
                         <IndianRupee className="size-4 text-red-500" />
-                        <span>Total Due Loans: {bank.totalNPAs}</span>
+                        <span>Total Outstanding Loans: {bank.totalNPAs}</span>
                       </motion.div>
                       <motion.div 
                         className="flex items-center gap-2 text-sm text-gray-600 p-2 bg-gray-50 rounded-lg"
@@ -683,7 +683,7 @@ export function NPARepaymentSection() {
             viewport={{ once: true }}
           >
             <Card className="p-8 bg-gradient-to-r from-blue-50 to-green-50 border-0 shadow-xl max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Choose DABBA PAY for Micro Repayments - Due Loans?</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Choose DABBA PAY for Easy Loan Repayments?</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {features.map((feature, index) => (
                   <motion.div
@@ -717,7 +717,7 @@ export function NPARepaymentSection() {
   // Bank Detail View (when a bank is selected)
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8 lg:px-12 xl:px-16 max-w-[1600px]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -745,7 +745,7 @@ export function NPARepaymentSection() {
                 <BankLogo bankKey={selectedBank.logoKey} size="xl" />
                 <div>
                   <CardTitle className="text-2xl">{selectedBank.name}</CardTitle>
-                  <p className="text-gray-600">{selectedBank.shortName} NPA Repayment Portal</p>
+                  <p className="text-gray-600">{selectedBank.shortName} Loan Repayment Portal</p>
                 </div>
               </div>
             </CardHeader>
@@ -828,7 +828,7 @@ export function NPARepaymentSection() {
                     onClick={handleStartRepayment}
                     className="flex-1 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
                   >
-                    Start NPA Repayment
+                    Start Loan Repayment
                     <ArrowRight className="size-4 ml-2" />
                   </Button>
                 </div>

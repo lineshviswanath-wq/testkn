@@ -277,8 +277,8 @@ export function ContactSection() {
         }}
       />
 
-      <div className="container mx-auto px-4 py-16 relative">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-8 lg:px-12 xl:px-16 py-16 relative max-w-[1600px]">
+        <div className="max-w-[1600px] mx-auto">
           {/* Header Section */}
           <motion.div 
             className="text-center mb-20"

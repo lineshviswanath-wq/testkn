@@ -57,7 +57,7 @@ export function AboutSection() {
     {
       id: 'dabbapay',
       name: 'DABBA PAY',
-      subtitle: 'Micro Repay for Due Loans',
+      subtitle: 'Micro Repay for Over Due Loans',
       description: 'Flexible daily/weekly repayment solutions for overdue loans, helping customers improve credit scores while reducing financial stress.',
       icon: CreditCard,
       gradient: 'from-blue-500 via-indigo-500 to-purple-500',
@@ -779,7 +779,7 @@ export function AboutSection() {
                     2
                   </motion.div>
 
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Due Loan Flexible Repayments</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Over Due Loan - Micro Repays</h3>
                   <p className="text-gray-700 leading-relaxed">
                     For those struggling with heavy EMIs, OneDabba partners with banks to make loan repayments easier by breaking them into smaller, flexible amounts.
                   </p>
